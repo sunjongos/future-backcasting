@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MCKINSEY &amp; COMPANY | 남양주 백병원 미래역산법 &amp; 박개성 컨설팅 퀀텀 도약 시각화 마스터 보고서 10.1</title>
+<title>MCKINSEY &amp; COMPANY | 남양주 백병원 박개성 병원 나무 구조 &amp; 지속성장 미래역산 마스터 보고서 11.0</title>
 <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -255,6 +255,42 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
       max-width: 980px;
     }
 
+    /* PARK GAESEONG HOSPITAL TREE DIAGNOSTICS CARD */
+    .tree-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 2px solid #10B981;
+    }
+    .tree-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .tree-node-card {
+      background: var(--mck-bg-gray);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--mck-navy);
+    }
+    .tree-node-card.soil { border-top-color: #D4AF37; }
+    .tree-node-card.trunk { border-top-color: #00A3E0; }
+    .tree-node-card.branches { border-top-color: #8B5CF6; }
+    .tree-node-card.fruits { border-top-color: #10B981; background: #ECFDF5; }
+
+    .tree-node-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .tree-node-card p { font-size: 0.86rem; color: var(--text-sub); line-height: 1.55; }
+
     /* QUANTUM LEAP VISUALIZATION CARD */
     .quantum-visual-card {
       background: #FFFFFF;
@@ -302,42 +338,6 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
       margin-bottom: 0.6rem;
     }
     .const-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.6; }
-
-    /* Concept Guide Box (쉬운 개념 설명) */
-    .concept-guide-box {
-      background: #FFFFFF;
-      border: 2px solid var(--mck-accent-cyan);
-      border-radius: 14px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 8px 25px rgba(0, 163, 224, 0.1);
-    }
-    .concept-guide-box h3 {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--mck-navy);
-      margin-bottom: 1rem;
-      display: flex; align-items: center; gap: 0.6rem;
-      border-bottom: 2px solid var(--mck-bg-gray);
-      padding-bottom: 0.6rem;
-    }
-
-    /* 3 Axis Grid */
-    .axis-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem;
-      margin-top: 1rem;
-    }
-    .axis-card {
-      background: var(--mck-bg-gray);
-      border-radius: 10px;
-      padding: 1.2rem;
-      border-left: 4px solid var(--mck-navy);
-    }
-    .axis-card h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.4rem; }
-    .axis-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.55; }
 
     /* Section Cards */
     .section-card {
@@ -427,24 +427,66 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <div class="mck-top-bar">
 <div class="mck-logo-group">
 <div class="mck-brand-title">McKinsey &amp; Company</div>
-<div class="mck-sub-title">| Quantum Leap Growth Layout Fixed Practice 10.1</div>
+<div class="mck-sub-title">| Park Gaeseong Hospital Tree Diagnostics Release 11.0</div>
 </div>
 <div class="report-meta">
       CONFIDENTIAL &amp; PROPRIETARY<br/>
-      Doc ID: MCK-NYJ-QUANTUM-FIX-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-HOSPITAL-TREE-2026 | Date: 2026. 08. 02
     </div>
 </div>
 <div class="report-container">
 <!-- Cover Card -->
 <div class="executive-header-card">
-<span class="executive-tag">Visual Quantum Leap Architecture Release 10.1</span>
-<h1 class="executive-title">미래역산법 &amp; 박개성 경영 컨설팅 기반<br/>남양주 백병원 퀀텀 도약(Quantum Leap) 성장 시각화 보고서</h1>
+<span class="executive-tag">Park Gaeseong Hospital Tree Architecture Release 11.0</span>
+<h1 class="executive-title">박개성 병원 나무 구조(Hospital Tree) 진단 기반<br/>위기 극복 &amp; 200병상 지속 성장 미래역산 마스터 보고서</h1>
 <p class="executive-subtitle">
-<strong>전통적 순방향 경영의 정체 함정 vs 미래역산 퀀텀 도약 커브를 다이내믹 시각화!</strong><br/>
-        24시간 응급 당직 적자를 0으로 차단하고, 4M 명의 농축으로 <strong>[Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현위치 종병 승격] ➔ [Phase 3: 토지 매입 200병상 메가 종병 도약]</strong>의 폭발적 수입·이익 퀀텀 도약을 한눈에 입증합니다.
+<strong>토지·뿌리(미션·거버넌스) ➔ 줄기(4M 역량) ➔ 가지(12대 테마) ➔ 열매(200병상 퀀텀도약) 나무 구조 통합!</strong><br/>
+        정부 비급여 통제의 퍼펙트 스톰 위기를 4M 명의 농축과 3단계 스케일업으로 돌파하고, <strong>[Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현위치 종병 승격] ➔ [Phase 3: 토지 매입 200병상 메가 종병 도약]</strong>의 영구적 성장 유전자를 완성한 마스터 처방전입니다.
       </p>
 </div>
-<!-- QUANTUM LEAP VISUALIZATION CARD (퀀텀 도약 시각화 차트 - 글자 잘림 완벽 수술) -->
+<!-- PARK GAESEONG HOSPITAL TREE DIAGNOSTICS CARD (박개성 병원 나무 구조 진단) -->
+<div class="tree-card">
+<div class="section-header" style="margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:none;">
+<div class="section-title">
+<i data-lucide="trees" style="color:#10B981;"></i> 박개성 대표 병원 나무 구조 (Hospital Tree Diagnostics) &amp; 위기극복 역량
+        </div>
+</div>
+<p style="font-size:0.92rem; color:var(--text-sub); line-height:1.65;">
+        병원 경영을 살아있는 나무에 비유하여, **토양과 뿌리가 건강해야 가지가 풍성해지고 폭풍우(비급여 억제 정책 등 퍼펙트 스톰)에도 흔들리지 않는 영구적 결실(200병상 대약진)**을 맺는다는 박개성 대표의 시그니처 4단계 구조 프레임워크입니다.
+      </p>
+<div class="tree-grid-4">
+<div class="tree-node-card soil">
+<h4><i data-lucide="sprout"></i> 1. 토양 &amp; 뿌리 (Soil &amp; Root)</h4>
+<p>
+            • <strong>토양</strong>: 당일검사-당일수술 쾌속 필수의료 미션(\(C_{\text{Mission}}\)).<br/>
+            • <strong>뿌리</strong>: 개인병원 100% 지배구조 보존(\(C_{\text{Gov}}\)) &amp; 220명 직원 단결력.
+          </p>
+</div>
+<div class="tree-node-card trunk">
+<h4><i data-lucide="shield-check"></i> 2. 줄기 (Trunk &amp; 4M)</h4>
+<p>
+            • <strong>Manpower</strong>: 척추관절 6인, 소화기 5인, 신경과 3인 명의 농축.<br/>
+            • <strong>Management</strong>: 9a9p 365일 응급 고정(당직 적자 0) &amp; 재원일수 4.5일 단축.
+          </p>
+</div>
+<div class="tree-node-card branches">
+<h4><i data-lucide="git-fork"></i> 3. 가지 &amp; 잎 (Branches)</h4>
+<p>
+            • <strong>12대 실행 테마</strong>: T1(전략)~T12(신사업).<br/>
+            • 수술실 4개 공동구매 20배 레버리지 &amp; 당일 대용종 절제 패스트트랙.
+          </p>
+</div>
+<div class="tree-node-card fruits">
+<h4><i data-lucide="trophy"></i> 4. 열매 &amp; 도약 (Fruits)</h4>
+<p>
+            • <strong>Phase 1</strong>: 월 35억~40억 (연90억 흑자).<br/>
+            • <strong>Phase 2</strong>: 현위치 105병상 종병 승격.<br/>
+            • <strong>Phase 3</strong>: 토지매입 200병상 메가종병 60억 도약!
+          </p>
+</div>
+</div>
+</div>
+<!-- QUANTUM LEAP VISUALIZATION CARD (퀀텀 도약 시각화 차트) -->
 <div class="quantum-visual-card">
 <div class="section-header" style="margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:none;">
 <div class="section-title">
@@ -458,7 +500,7 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <line stroke="rgba(255,255,255,0.12)" stroke-dasharray="4" x1="160" x2="1020" y1="120" y2="120"></line>
 <line stroke="rgba(255,255,255,0.12)" stroke-dasharray="4" x1="160" x2="1020" y1="190" y2="190"></line>
 <line stroke="rgba(255,255,255,0.25)" x1="160" x2="1020" y1="260" y2="260"></line>
-<!-- Y-Axis Labels (글자 절대 안 잘리도록 좌측 여백 x=15 및 text-anchor="start" 완벽 보정) -->
+<!-- Y-Axis Labels -->
 <text fill="#8B5CF6" font-size="13" font-weight="900" text-anchor="start" x="15" y="55">월 60억 (연150억)</text>
 <text fill="#00A3E0" font-size="13" font-weight="900" text-anchor="start" x="15" y="125">월 45억 (연90억)</text>
 <text fill="#10B981" font-size="13" font-weight="900" text-anchor="start" x="15" y="195">월 35~40억 (연78억)</text>
@@ -581,7 +623,7 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <div class="section-card">
 <div class="section-header">
 <div class="section-title">
-<i data-lucide="network"></i> 2. 퀀텀 도약 온톨로지 지식 그래프 (Vis.js Canvas)
+<i data-lucide="network"></i> 2. 박개성 나무 구조 &amp; 퀀텀 도약 온톨로지 지식 그래프 (Vis.js Canvas)
         </div>
 <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
           Vis.js Interactive Canvas
@@ -639,30 +681,30 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 </div>
 </div>
 <footer>
-    McKinsey &amp; Company Strategy Practice | Namyangju Paik Hospital Layout Fixed Release 10.1 2026<br/>
+    McKinsey &amp; Company Strategy Practice | Namyangju Paik Hospital Park Gaeseong Hospital Tree Release 11.0 2026<br/>
     Copyright © McKinsey &amp; Company. All Rights Reserved.
   </footer>
 <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (QUANTUM LEAP INTEGRATED)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (PARK GAESEONG HOSPITAL TREE INTEGRATED)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
-        { id: 'paik_master_root', label: '남양주 백병원 (퀀텀도약 시각화 완결)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'quantum_curve', label: '퀀텀 도약 커브 (월 30억 ➔ 월 45억 ➔ 월 60억)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
-        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (명의 확충 퀀텀점프)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
-        { id: 'phase2_target', label: 'Phase 2: 현 부지 105병상 종병 승격', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
-        { id: 'phase3_target', label: 'Phase 3: 토지 매입 ➔ 200병상 메가 종병 도약', color: { background: '#8B5CF6', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
+        { id: 'paik_master_root', label: '남양주 백병원 (박개성 병원나무구조 완결)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'soil_root', label: '토양·뿌리: 미션(당일수술필수의료) & 개인병원지배구조(C_Gov)', color: { background: '#D4AF37', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
+        { id: 'trunk_4m', label: '줄기: 4M 명의 농축 (척추관절6인/소화기5인/치매3인)', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
+        { id: 'branches_12themes', label: '가지: 12대 실행 테마 (수술실4개 20배구매레버리지)', color: { background: '#8B5CF6', border: '#FFF' }, size: 22, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
+        { id: 'fruits_200bed', label: '열매: Phase1(월40억) ➔ Phase2(종병승격) ➔ Phase3(200병상도약)', color: { background: '#10B981', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
       ]);
 
       const edges = new vis.DataSet([
-        { from: 'paik_master_root', to: 'quantum_curve', label: 'visualizes_quantum_leap', arrows: 'to' },
-        { from: 'quantum_curve', to: 'phase1_target', label: '1st_leap_40b', arrows: 'to' },
-        { from: 'phase1_target', to: 'phase2_target', label: '2nd_leap_promotion', arrows: 'to' },
-        { from: 'phase2_target', to: 'phase3_target', label: '3rd_leap_200bed', arrows: 'to' }
+        { from: 'paik_master_root', to: 'soil_root', label: 'anchors_soil_root', arrows: 'to' },
+        { from: 'soil_root', to: 'trunk_4m', label: 'grows_trunk_4m', arrows: 'to' },
+        { from: 'trunk_4m', to: 'branches_12themes', label: 'branches_12themes', arrows: 'to' },
+        { from: 'branches_12themes', to: 'fruits_200bed', label: 'yields_quantum_leap', arrows: 'to' }
       ]);
 
       const data = { nodes: nodes, edges: edges };
