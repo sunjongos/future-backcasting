@@ -10,6 +10,7 @@ def init_db():
     cursor.execute('DROP TABLE IF EXISTS backcasting_nodes')
     cursor.execute('DROP TABLE IF EXISTS problem_solving_and_learning')
     cursor.execute('DROP TABLE IF EXISTS dsq_optimization_rules')
+    cursor.execute('DROP TABLE IF EXISTS ontology_triples')
 
     # 1. 7단계 온톨로지 테이블
     cursor.execute('''
@@ -45,6 +46,17 @@ def init_db():
             axis_name TEXT,
             weight REAL,
             formula TEXT,
+            description TEXT
+        )
+    ''')
+
+    # 4. RDF Symbol Triples Knowledge Graph 테이블 (Loop 2)
+    cursor.execute('''
+        CREATE TABLE ontology_triples (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            subject TEXT,
+            predicate TEXT,
+            object TEXT,
             description TEXT
         )
     ''')
@@ -86,17 +98,25 @@ def init_db():
         VALUES (?, ?, ?, ?)
     ''', dsq_rules)
 
+    triples_data = [
+        ("Future_Goal_Constant", "defines_target_via", "Peter_Drucker_SMART", "미래 목표상수를 피터 드러커 SMART 원칙으로 정량화"),
+        ("Future_Backcasting", "solves_present_via", "Binary_Choice_01", "미래역산법이 현재 문제를 0/1 선택으로 단순화"),
+        ("Future_Backcasting", "optimizes_performance_via", "DSQ_Equation", "Performance = D x S x Q 성과 최적화"),
+        ("Binary_Choice_1", "concentrates_resources_on", "Core_Mission", "사명 및 100억 수지 직결 과제 100% 농축"),
+        ("Binary_Choice_0", "eliminates_waste_of", "Legacy_Inertia", "낭비 관행 및 적자 사업 0으로 차단"),
+        ("Present_Outcome", "traces_back_to", "Past_Causes", "현재 성과 결과 데이터를 통해 과거 원인 역산 추적"),
+        ("Learner_Agent", "completes_learning_via", "Causal_Feedback", "과거 원인 패턴 역추적으로 피드백 학습 완성"),
+        ("Forward_Prediction", "causes_explosion_of", "Analysis_Paralysis", "순방향 예측 시 무한 경우의 수 폭발로 의사결정 마비")
+    ]
+
+    cursor.executemany('''
+        INSERT INTO ontology_triples (subject, predicate, object, description)
+        VALUES (?, ?, ?, ?)
+    ''', triples_data)
+
     conn.commit()
     conn.close()
-    print(f"[SQLite Ontology] Successfully initialized Future Backcasting DB at: {DB_PATH}")
-
-def get_all_nodes():
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-    cursor.execute('SELECT * FROM backcasting_nodes ORDER BY step_order ASC')
-    rows = cursor.fetchall()
-    conn.close()
-    return rows
+    print(f"[SQLite Ontology 3.0] Successfully reloaded Future Backcasting DB at: {DB_PATH}")
 
 if __name__ == "__main__":
     init_db()
