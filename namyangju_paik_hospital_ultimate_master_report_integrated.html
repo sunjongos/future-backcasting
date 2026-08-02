@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MCKINSEY &amp; COMPANY | 남양주 백병원 (개인병원 구조 유지) 종합병원 승격 미래역산 최종 마스터 보고서</title>
+<title>MCKINSEY &amp; COMPANY | 남양주 백병원 3단계 스케일업(105병상 ➔ 현위치 종병 ➔ 토지매입 200병상 종병) 미래역산 마스터 보고서</title>
 <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -310,27 +310,32 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
     }
     .summary-callout-banner p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.6; }
 
-    /* Financial Grid 4 */
-    .financial-grid-4 {
+    /* 3 Phase Scale-Up Grid */
+    .phase-grid-3 {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
       margin-bottom: 2.5rem;
     }
-    .fin-card {
+    .phase-card-3 {
       background: #FFFFFF;
-      border-radius: 12px;
-      padding: 1.5rem;
-      border-top: 4px solid var(--mck-navy);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border-radius: 14px;
+      padding: 1.6rem;
+      border-top: 5px solid var(--mck-navy);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
-    .fin-card.gold { border-top-color: #D4AF37; }
-    .fin-card.green { border-top-color: #10B981; }
-    .fin-card.cyan { border-top-color: #00A3E0; }
+    .phase-card-3.p1 { border-top-color: #10B981; }
+    .phase-card-3.p2 { border-top-color: #00A3E0; }
+    .phase-card-3.p3 { border-top-color: #8B5CF6; }
 
-    .fin-number { font-family: var(--font-code); font-size: 1.6rem; font-weight: 900; color: var(--mck-navy); margin-bottom: 0.3rem; }
-    .fin-card h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.4rem; }
-    .fin-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
+    .phase-card-3 h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      margin-bottom: 0.6rem;
+    }
+    .phase-card-3 p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.6; }
 
     /* Section Cards */
     .section-card {
@@ -420,21 +425,21 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <div class="mck-top-bar">
 <div class="mck-logo-group">
 <div class="mck-brand-title">McKinsey &amp; Company</div>
-<div class="mck-sub-title">| Personal Hospital Structure Preserved Practice</div>
+<div class="mck-sub-title">| 3-Phase Scale-Up &amp; Land Acquisition Master Practice</div>
 </div>
 <div class="report-meta">
       CONFIDENTIAL &amp; PROPRIETARY<br/>
-      Doc ID: MCK-NYJ-ULTIMATE-REAL-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-ULTIMATE-3PHASE-2026 | Date: 2026. 08. 02
     </div>
 </div>
 <div class="report-container">
 <!-- Cover Card -->
 <div class="executive-header-card">
-<span class="executive-tag">Personal Hospital Ownership Structure Maintained</span>
-<h1 class="executive-title">개인병원 지배구조 100% 유지하며<br/>월 35억~40억 퀀텀 점프 &amp; 종합병원 승격 미래역산 보고서</h1>
+<span class="executive-tag">3-Phase Scale-Up &amp; Land Expansion Master Edition</span>
+<h1 class="executive-title">남양주 백병원 3단계 스케일업 로드맵<br/>(105병상 ➔ 현위치 종병 승격 ➔ 토지 매입 200병상 메가 종병 도약)</h1>
 <p class="executive-subtitle">
-<strong>법인 전환의 현실적 어려움을 100% 반영하여 개인병원 지배구조를 완벽 유지!</strong><br/>
-        현 105병상/수술실4개/의사20명/직원220명/월30억(영업이익률 10%) 스펙에서 <strong>핵심 센터 명의 확충으로 [Phase 1: 월 35억~40억 흑자 정착 (+38.15억)] ➔ [Phase 2: 개인병원 형태 종합병원 승격]</strong>을 완결한 최종 마스터 처방전입니다.
+        현재 105병상/수술실 4개/의사 20명/직원 220명/월 매출 30억 원(영업이익률 10%) 베이스라인에서 출발하여,<br/>
+<strong>[Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현 부지 105병상 종합병원 승격] ➔ [Phase 3: 인근 토지 매입 200병상 메가 종합병원 2차 도약]</strong>을 완결한 최고의 맥킨지 마스터 처방전입니다.
       </p>
 </div>
 <!-- CONCEPT GUIDE BOX (누구나 쉬운 미래역산법 입문 가이드) -->
@@ -447,53 +452,57 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <div class="axis-grid-3">
 <div class="axis-card" style="border-left-color:#D4AF37;">
 <h4>1축: 미래 목표상수 ($C_{\text{Goal}}$)</h4>
-<p>내년/가까운 미래 남양주 백병원의 <strong>"개인병원 구조로 월 매출 35억~40억 흑자 정착 &amp; 종합병원 승격"</strong> 상수를 고정합니다.</p>
+<p>내년/장기 미래 <strong>"월 35억~40억 흑자 정착 ➔ 현위치 종병 승격 ➔ 토지 매입 200병상 도약"</strong> 상수를 고정합니다.</p>
 </div>
 <div class="axis-card" style="border-left-color:#10B981;">
 <h4>2축: 현재 0/1 선택 &amp; DSQ 최적화</h4>
 <p>
             • <strong>1 (Focus/농축)</strong>: 척추관절 1등(의사 6명), 소화기내과 4인+외과, 치매센터 확충.<br/>
-            • <strong>0 (Eliminate/배제)</strong>: 300병상 종병도 망하는 24시간 응급 헛구호 &amp; 현실과 떨어진 법인전환 0 차단!
+            • <strong>0 (Eliminate/배제)</strong>: 300병상 종병도 망하는 24시간 응급 헛구호 0 차단!
           </p>
 </div>
 <div class="axis-card" style="border-left-color:#00A3E0;">
 <h4>3축: 과거 피드백 학습</h4>
-<p>개원 만 4년 동안 환자가 빠져나간 과거 원인(의료진 약함, 당직 적자)을 역추적하여 <strong>당일 수술 쾌속 시스템</strong>으로 해결합니다.</p>
+<p>개원 만 4년 동안 환자가 빠져나간 과거 원인을 역추적하여 <strong>당일 수술 패스트트랙 &amp; 부지 매입 200병상</strong>으로 해결합니다.</p>
 </div>
 </div>
 </div>
-<!-- FINANCIAL BASELINE 4 CARDS -->
-<div class="financial-grid-4">
-<div class="fin-card gold">
-<div class="fin-number">개인병원 구조유지</div>
-<h4>지배 구조 (Ownership)</h4>
-<p>현 개인병원 지배구조 100% 유지하며 내실 성장</p>
+<!-- 3 PHASE SCALE-UP GRID -->
+<div class="phase-grid-3">
+<div class="phase-card-3 p1">
+<h4>Phase 1: 월 35억~40억 흑자 정착</h4>
+<p>
+          • <strong>기간</strong>: 현재 ~ 2027년 (내년 100일)<br/>
+          • <strong>액션</strong>: 105병상/수술실 4개 가동률 85% 풀회전 &amp; 명의 확충 (척추관절 6인, 소화기4인+외과, 신경과 3인).<br/>
+          • <strong>재무</strong>: 월 매출 35억~40억 정착 (연간 영업이익 <strong>78억~90억 원</strong> 획득).
+        </p>
 </div>
-<div class="fin-card">
-<div class="fin-number">20명 / 220명</div>
-<h4>인력 구성 (Headcount)</h4>
-<p>개원 만 4년차 의사 20명 및 직원 220명 체제</p>
+<div class="phase-card-3 p2">
+<h4>Phase 2: 현 부지 105병상 종병 승격</h4>
+<p>
+          • <strong>기간</strong>: 2028년 (가까운 미래)<br/>
+          • <strong>액션</strong>: Phase 1 흑자 재원으로 현 위치에서 법정 종합병원 승격 완결.<br/>
+          • <strong>위상</strong>: 남양주 지역사회 <strong>"종합병원 브랜드 위상"</strong> 조기 선점.
+        </p>
 </div>
-<div class="fin-card cyan">
-<div class="fin-number">월 30 억원</div>
-<h4>현재 월 매출 (Baseline)</h4>
-<p>현 105병상 / 수술실 4개 가동 상태의 월 평균 실질 매출액</p>
-</div>
-<div class="fin-card green">
-<div class="fin-number">개인 종합병원 승격</div>
-<h4>지속 성장 비전</h4>
-<p>월 35억~40억 달성 후 개인병원 형태 종합병원 승격 완결</p>
+<div class="phase-card-3 p3">
+<h4>Phase 3: 토지 매입 &amp; 200병상 도약</h4>
+<p>
+          • <strong>기간</strong>: 2030년 (장기 미래)<br/>
+          • <strong>액션</strong>: 축적된 흑자 자본금으로 인근 토지 매입 ➔ 200병상 첨단 메가 종합병원 신축/증축.<br/>
+          • <strong>결과</strong>: 남양주 현대병원 완벽 제압, 경기 동북부 1위 독점.
+        </p>
 </div>
 </div>
 <!-- SUMMARY BANNER (CORE SUMMARY FIRST) -->
 <div class="summary-callout-banner">
-<h3><i data-lucide="shield-check" style="color:var(--mck-accent-gold);"></i> 개인병원 지배구조 유지 &amp; 월 35억~40억 퀀텀 점프 요약</h3>
+<h3><i data-lucide="map-pin" style="color:var(--mck-accent-gold);"></i> 3단계 스케일업 &amp; 부지 매입 비전 핵심 요약</h3>
 <p>
-        1. <strong>지배구조 팩트 (Ownership Fact)</strong>: 법인 전환의 현실적 어려움을 반영하여 **개인병원 지배구조를 100% 완벽히 유지**하며 내실 성장에 집중.<br/>
-        2. <strong>의료진 20명 &amp; 직원 220명 레버리지</strong>: 고정비 인프라 상에서 척추관절(6명), 소화기내과(4명+외과), 뇌신경(3명) 명의 교체·확충으로 매출 증분(+5억~10억 원)을 즉시 영업이익으로 전환.<br/>
-        3. <strong>수지 목표상수 ($C_{\text{Goal}}$)</strong>:<br/>
-          • <strong>Phase 1</strong>: 월 매출 **35억 ~ 40억 원** 정착 ➔ 영업이익률 **10% ➔ 18~20%** 급상승 ➔ **월 영업이익 6.5억~7.5억 원 (연간 78억~90억 원 / 수지개선 영업이익 +\(\Delta\)EBIT = +42억~54억 원)**.<br/>
-          • <strong>Phase 2</strong>: 연간 80억+ 흑자 선순환 재원으로 **개인병원 형태의 종합병원 승격 2차 양적 도약!**
+        1. <strong>지배구조 &amp; 하드웨어 Baseline</strong>: 개인병원 지배구조 100% 완벽 유지 / 현 105병상 / 수술실 4개 / 의사 20명 / 직원 220명 / 개원 만 4년차 / 현 월 매출 30억 원(영업이익률 10%).<br/>
+        2. <strong>3단계 완벽 스케일업 로드맵</strong>:<br/>
+          • <strong>Phase 1</strong>: 명의 확충 ➔ 월 매출 **35억 ~ 40억 원** 정착 (영업이익 연간 **78억 ~ 90억 원** 정액 산출).<br/>
+          • <strong>Phase 2</strong>: 현 위치에서 **105병상 기반 종합병원 승격** 추진 ➔ 지역사회 브랜드 독점.<br/>
+          • <strong>Phase 3</strong>: 축적 자본금으로 **인근 토지/부지 매입(Land Acquisition)** ➔ **200병상 메가 종합병원 2차 도약** 완결!
       </p>
 </div>
 <!-- SECTION 1: MEDICAL STAFF BASELINE & UPGRADE SCHEME -->
@@ -544,7 +553,7 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <div class="section-card">
 <div class="section-header">
 <div class="section-title">
-<i data-lucide="network"></i> 2. 개인병원 지배구조 유지 &amp; 종합병원 승격 온톨로지 지식 그래프 (Vis.js Canvas)
+<i data-lucide="network"></i> 2. 3단계 스케일업 &amp; 토지 매입 온톨로지 지식 그래프 (Vis.js Canvas)
         </div>
 <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
           Vis.js Interactive Canvas
@@ -558,7 +567,7 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <div class="section-card">
 <div class="section-header">
 <div class="section-title">
-<i data-lucide="calculator"></i> 3. DSQ 수리 최적화: 월 매출 30억➔35억~40억 영업이익 레버리지
+<i data-lucide="calculator"></i> 3. DSQ 수리 최적화 &amp; 3단계 스케일업 재무 로드맵
         </div>
 </div>
 <div class="dsq-math-box">
@@ -572,72 +581,60 @@ function Dd(){return Dd=Object.assign||function(g){for(var A=1;A<arguments.lengt
 <table class="mck-table">
 <thead>
 <tr>
-<th>재무 지표 (Financial Metric)</th>
-<th>현재 상태 (개인병원 Baseline)</th>
-<th style="color:var(--mck-accent-cyan);">Phase 1 목표상수 (월 35억 달성)</th>
-<th style="color:#10B981;">Phase 2 개인 종합병원 승격 (완결)</th>
+<th>스케일업 단계</th>
+<th>병상 및 위치 규격</th>
+<th>목표 매출액 및 영업이익액</th>
+<th>핵심 전략 및 비전</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="font-weight:800;">월 평균 매출액</td>
-<td>월 30.0 억원</td>
-<td style="font-weight:800; color:var(--mck-accent-cyan);">월 35.0 억원 (+5억)</td>
-<td style="font-weight:800; color:#10B981;">월 40.0 억원 이상 (+10억+)</td>
+<td style="font-weight:800; color:var(--mck-navy);">Phase 1 (현재 ~ 2027년)</td>
+<td>현 105병상 / 수술실 4개 (개인병원)</td>
+<td>월 35억~40억 원 (연 영업이익 78억~90억)</td>
+<td>명의 3대 센터 확충 ➔ 흑자 자본금 대거 적립</td>
 </tr>
 <tr>
-<td style="font-weight:800;">월 영업이익액 (EBIT)</td>
-<td>월 3.0 억원 (연 36억)</td>
-<td style="font-weight:800; color:var(--mck-accent-cyan);">월 5.25 억원 (연 63억)</td>
-<td style="font-weight:800; color:#10B981;">월 7.5 억원 (연 90억)</td>
+<td style="font-weight:800; color:var(--mck-navy);">Phase 2 (2028년)</td>
+<td>현 부지 105병상 기반 종합병원 승격</td>
+<td>월 40억~45억 원 (연 영업이익 90억+)</td>
+<td>현 위치에서 법정 종합병원 승격 ➔ 브랜드 독점</td>
 </tr>
 <tr>
-<td style="font-weight:800;">영업이익률 (EBIT Margin)</td>
-<td>약 10.0 %</td>
-<td style="font-weight:800; color:var(--mck-accent-cyan);">약 15.0 % (상승)</td>
-<td style="font-weight:900; color:#10B981; font-size:1.05rem;">약 18.75 ~ 20.0 % (대폭 상승)</td>
-</tr>
-<tr>
-<td style="font-weight:800;">지배구조 및 지위</td>
-<td>개인병원 (105병상 / 수술실 4개)</td>
-<td>명의 확충 및 3대 센터 남양주 1위</td>
-<td style="font-weight:900; color:#10B981; font-size:1.05rem;">개인병원 형태 300병상 종합병원 승격</td>
+<td style="font-weight:800; color:var(--mck-navy);">Phase 3 (2030년)</td>
+<td><strong style="color:#8B5CF6;">인근 토지 매입 ➔ 200병상 메가 종병</strong></td>
+<td style="font-weight:900; color:#8B5CF6;">월 60억 원 이상 (연 영업이익 150억+)</td>
+<td>200병상 첨단 신축 ➔ 경기 동북부 1위 메가 종병 등극</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <footer>
-    McKinsey &amp; Company Strategy Practice | Namyangju Paik Hospital Real Master Edition 2026<br/>
+    McKinsey &amp; Company Strategy Practice | Namyangju Paik Hospital 3-Phase Land Expansion Edition 2026<br/>
     Copyright © McKinsey &amp; Company. All Rights Reserved.
   </footer>
 <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (PERSONAL HOSPITAL STRUCTURE PRESERVED)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (3-PHASE SCALE-UP)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
-        { id: 'paik_master_root', label: '남양주 백병원 (개인병원유지/의사20/직원220/월30억)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'backcasting_concept', label: '미래역산 개념 (미래고정 ➔ 0/1선택 ➔ 과거학습)', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
-        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (명의 확충 퀀텀점프)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'spine_center_1st', label: '척추관절 1등 (척추2+관절3+마취1)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
-        { id: 'gastro_center_1st', label: '소화기 1위 (내과4+외과1 검진/입원)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
-        { id: 'neuro_dementia', label: '신경과 3명 (치매센터 활성화)', color: { background: '#F59E0B', border: '#FFF' }, size: 20, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
-        { id: 'cut_300b_trap', label: '0(배제): 300병상 종병 적자유발 24시간 응급 & 법인전환 0차단', color: { background: '#EF4444', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
-        { id: 'phase2_general_hosp', label: 'Phase 2: 개인병원 형태 종합병원 승격 (연간 90억 흑자)', color: { background: '#8B5CF6', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
+        { id: 'paik_master_root', label: '남양주 백병원 (105병상/수술실4개/의사20/직원220)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (명의 확충 퀀텀점프)', color: { background: '#10B981', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'phase2_target', label: 'Phase 2: 현 부지 105병상 종병 승격', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'phase3_target', label: 'Phase 3: 토지 매입 ➔ 200병상 메가 종병 도약', color: { background: '#8B5CF6', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'cut_300b_trap', label: '0(배제): 300병상 종병 적자유발 24시간 응급 0차단', color: { background: '#EF4444', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } }
       ]);
 
       const edges = new vis.DataSet([
-        { from: 'paik_master_root', to: 'backcasting_concept', label: 'applies_backcasting', arrows: 'to' },
-        { from: 'backcasting_concept', to: 'phase1_target', label: 'leverages_fixed_costs', arrows: 'to' },
-        { from: 'paik_master_root', to: 'cut_300b_trap', label: 'eliminates_unrealistic_ideas', arrows: 'to' },
-        { from: 'phase1_target', to: 'spine_center_1st', label: 'beats_ace_l_hyundai', arrows: 'to' },
-        { from: 'phase1_target', to: 'gastro_center_1st', label: 'monopolizes_checkup', arrows: 'to' },
-        { from: 'phase1_target', to: 'neuro_dementia', label: 'activates_dementia_center', arrows: 'to' },
-        { from: 'phase1_target', to: 'phase2_general_hosp', label: 'leads_to_personal_general_hosp', arrows: 'to' }
+        { from: 'paik_master_root', to: 'phase1_target', label: '100day_action', arrows: 'to' },
+        { from: 'paik_master_root', to: 'cut_300b_trap', label: 'eliminates_deficit_trap', arrows: 'to' },
+        { from: 'phase1_target', to: 'phase2_target', label: 'funds_local_general_hosp', arrows: 'to' },
+        { from: 'phase2_target', to: 'phase3_target', label: 'buys_land_for_200bed', arrows: 'to' }
       ]);
 
       const data = { nodes: nodes, edges: edges };
