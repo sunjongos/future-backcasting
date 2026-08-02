@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCKINSEY & COMPANY | 남양주 백병원 (개원 만 4년/의사20/직원220/월30억/10%) 미래역산 최종 마스터 보고서</title>
+  <title>MCKINSEY & COMPANY | 남양주 백병원 미래역산법 입문 & 2단계 스케일업 최종 마스터 보고서</title>
   
   <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,6 +120,42 @@
       line-height: 1.6;
       max-width: 980px;
     }
+
+    /* Concept Guide Box (쉬운 개념 설명) */
+    .concept-guide-box {
+      background: #FFFFFF;
+      border: 2px solid var(--mck-accent-cyan);
+      border-radius: 14px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 25px rgba(0, 163, 224, 0.1);
+    }
+    .concept-guide-box h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      border-bottom: 2px solid var(--mck-bg-gray);
+      padding-bottom: 0.6rem;
+    }
+
+    /* 3 Axis Grid */
+    .axis-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .axis-card {
+      background: var(--mck-bg-gray);
+      border-radius: 10px;
+      padding: 1.2rem;
+      border-left: 4px solid var(--mck-navy);
+    }
+    .axis-card h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.4rem; }
+    .axis-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.55; }
 
     /* Summary Banner */
     .summary-callout-banner {
@@ -251,11 +287,11 @@
   <div class="mck-top-bar">
     <div class="mck-logo-group">
       <div class="mck-brand-title">McKinsey & Company</div>
-      <div class="mck-sub-title">| 4-Year Hospital Lifecycle Inflection Point Practice</div>
+      <div class="mck-sub-title">| Future Backcasting Primer & Executive Master Practice</div>
     </div>
     <div class="report-meta">
       CONFIDENTIAL & PROPRIETARY<br>
-      Doc ID: MCK-NYJ-ULTIMATE-4YEAR-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-ULTIMATE-PRIMER-2026 | Date: 2026. 08. 02
     </div>
   </div>
 
@@ -263,12 +299,41 @@
     
     <!-- Cover Card -->
     <div class="executive-header-card">
-      <span class="executive-tag">4-Year Lifecycle Inflection Point Master Edition</span>
-      <h1 class="executive-title">남양주 백병원 (개원 만 4년차/의사 20명/직원 220명/월 30억)<br>월 35억~40억 퀀텀 점프 & 진짜 종합병원 승격 미래역산 보고서</h1>
+      <span class="executive-tag">Future Backcasting Concept & Strategy Edition</span>
+      <h1 class="executive-title">남양주 백병원(개원 만 4년/의사 20명/직원 220명/월 30억)<br>미래역산법 기초 개념 가이드 & 월 35억~40억 퀀텀 점프 마스터 보고서</h1>
       <p class="executive-subtitle">
-        <strong>개원 만 4년차 퀀텀 점프 골든타임 진단!</strong> 초기 안착기(월 매출 30억, 영업이익률 10%)를 지나,<br>
-        300병상 종병도 망하는 24시간 응급/심혈관 헛구호를 0으로 배제하고 <strong>핵심 센터 명의 확충으로 [Phase 1: 월 35억~40억 흑자 정착 (+38.15억)] ➔ [Phase 2: 안전한 진짜 종합병원 승격]</strong>을 완결한 최종 마스터 처방전입니다.
+        사전 공부 없이도 보고서 전체를 100% 한눈에 이해할 수 있는 <strong>[미래역산법 핵심 개념 & 3축 메커니즘 가이드]</strong> 탑재!<br>
+        300병상 종병도 망하는 24시간 응급/심혈관 헛구호를 0으로 배제하고 <strong>[Phase 1: 월 35억~40억 흑자 정착 (+38.15억)] ➔ [Phase 2: 안전한 진짜 종합병원 승격]</strong>을 완결한 최종 집대성 마스터 보고서입니다.
       </p>
+    </div>
+
+    <!-- CONCEPT GUIDE BOX (누구나 쉬운 미래역산법 입문 가이드) -->
+    <div class="concept-guide-box">
+      <h3><i data-lucide="book-open" style="color:var(--mck-accent-cyan);"></i> [누구나 쉬운 가이드] 미래역산법(Future Backcasting)이란 무엇인가?</h3>
+      <p style="font-size:0.92rem; color:var(--text-sub); margin-bottom:1rem; line-height:1.65;">
+        대부분의 기업이나 병원은 과거 예산과 현재 한계에서 출발하는 <strong>'순방향 예측(Forward Prediction)'</strong>을 사용합니다. 그러나 순방향 예측은 불확실한 경우의 수가 폭발하여 결국 의사결정이 정체되는 <strong>[분석 마비 (Analysis Paralysis)]</strong>에 빠집니다.<br>
+        반면, <strong>'미래역산법'</strong>은 **미래의 목표 모습(Goal Constant)을 먼저 확정해 두고, "이 미래를 이루기 위해 지금 당장 무엇을 선택(1)하고 배제(0)해야 하는가?"**를 거꾸로 역산하여 100일 만에 실행하는 경영 전략 수리 과학입니다.
+      </p>
+
+      <div class="axis-grid-3">
+        <div class="axis-card" style="border-left-color:#D4AF37;">
+          <h4>1축: 미래 목표상수 ($C_{\text{Goal}}$)</h4>
+          <p>내년/가까운 미래 남양주 백병원의 <strong>"월 매출 35억~40억 흑자 정착 & 3대 센터 1위"</strong> 상수를 가장 먼저 고정 앵커로 꽂습니다.</p>
+        </div>
+
+        <div class="axis-card" style="border-left-color:#10B981;">
+          <h4>2축: 현재 0/1 선택 & DSQ 최적화</h4>
+          <p>
+            • <strong>1 (Focus/농축)</strong>: 척추관절 1등(의사 6명), 소화기내과 4인+외과, 치매센터 확충.<br>
+            • <strong>0 (Eliminate/배제)</strong>: 300병상 종병도 망하는 24시간 응급 헛구호 0 차단!
+          </p>
+        </div>
+
+        <div class="axis-card" style="border-left-color:#00A3E0;">
+          <h4>3축: 과거 피드백 학습</h4>
+          <p>개원 만 4년 동안 환자가 빠져나간 과거 원인(의료진 약함, 적자 당직)을 역추적하여 <strong>당일 수술 쾌속 시스템</strong>으로 과거 오류를 소거합니다.</p>
+        </div>
+      </div>
     </div>
 
     <!-- FINANCIAL BASELINE 4 CARDS -->
@@ -360,7 +425,7 @@
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <i data-lucide="network"></i> 2. 개원 만 4년차 퀀텀 점프 온톨로지 지식 그래프 (Vis.js Canvas)
+          <i data-lucide="network"></i> 2. 미래역산 개념 온톨로지 지식 그래프 (Vis.js Canvas)
         </div>
         <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
           Vis.js Interactive Canvas
@@ -430,20 +495,21 @@
   </div>
 
   <footer>
-    McKinsey & Company Strategy Practice | Namyangju Paik Hospital 4-Year Anniversary Edition 2026<br>
+    McKinsey & Company Strategy Practice | Namyangju Paik Hospital Future Backcasting Primer Edition 2026<br>
     Copyright © McKinsey & Company. All Rights Reserved.
   </footer>
 
   <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (4-YEAR INFLECTION POINT)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (WITH CONCEPT PRIMER)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
         { id: 'paik_master_root', label: '남양주 백병원 (개원만4년/의사20/직원220/월30억)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'backcasting_concept', label: '미래역산 개념 (미래고정 ➔ 0/1선택 ➔ 과거학습)', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (이익률 18~20%)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
         { id: 'spine_center_1st', label: '척추관절 1등 (척추2+관절3+마취1)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'gastro_center_1st', label: '소화기 1위 (내과4+외과1 검진/입원)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
@@ -453,7 +519,8 @@
       ]);
 
       const edges = new vis.DataSet([
-        { from: 'paik_master_root', to: 'phase1_target', label: 'leverages_fixed_costs', arrows: 'to' },
+        { from: 'paik_master_root', to: 'backcasting_concept', label: 'applies_backcasting', arrows: 'to' },
+        { from: 'backcasting_concept', to: 'phase1_target', label: 'leverages_fixed_costs', arrows: 'to' },
         { from: 'paik_master_root', to: 'cut_300b_trap', label: 'eliminates_deficit_trap', arrows: 'to' },
         { from: 'phase1_target', to: 'spine_center_1st', label: 'beats_ace_l_hyundai', arrows: 'to' },
         { from: 'phase1_target', to: 'gastro_center_1st', label: 'monopolizes_checkup', arrows: 'to' },
