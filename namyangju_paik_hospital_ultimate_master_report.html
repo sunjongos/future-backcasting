@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCKINSEY & COMPANY | 남양주 백병원 2단계 스케일업 미래역산 최종 마스터 보고서 (20인 의료진 팩트 완결판)</title>
+  <title>MCKINSEY & COMPANY | 남양주 백병원 (개원 만 4년/의사20/직원220/월30억/10%) 미래역산 최종 마스터 보고서</title>
   
   <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,24 +140,27 @@
     }
     .summary-callout-banner p { font-size: 0.92rem; color: var(--text-sub); line-height: 1.6; }
 
-    /* SCQA Grid */
-    .scqa-grid {
+    /* Financial Grid 4 */
+    .financial-grid-4 {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.2rem;
       margin-bottom: 2.5rem;
     }
-    .scqa-card {
+    .fin-card {
       background: #FFFFFF;
       border-radius: 12px;
       padding: 1.5rem;
       border-top: 4px solid var(--mck-navy);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
-    .scqa-card.accent { border-top-color: var(--mck-accent-gold); background: #FFFDF5; }
-    .scqa-step { font-family: var(--font-code); font-size: 0.75rem; font-weight: 800; color: var(--mck-accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem; }
-    .scqa-card h4 { font-family: var(--font-heading); font-size: 1.08rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.6rem; }
-    .scqa-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.55; }
+    .fin-card.gold { border-top-color: #D4AF37; }
+    .fin-card.green { border-top-color: #10B981; }
+    .fin-card.cyan { border-top-color: #00A3E0; }
+
+    .fin-number { font-family: var(--font-code); font-size: 1.6rem; font-weight: 900; color: var(--mck-navy); margin-bottom: 0.3rem; }
+    .fin-card h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.4rem; }
+    .fin-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
 
     /* Section Cards */
     .section-card {
@@ -248,11 +251,11 @@
   <div class="mck-top-bar">
     <div class="mck-logo-group">
       <div class="mck-brand-title">McKinsey & Company</div>
-      <div class="mck-sub-title">| 20 Medical Staff Capacity & Integrated Master Practice</div>
+      <div class="mck-sub-title">| 4-Year Hospital Lifecycle Inflection Point Practice</div>
     </div>
     <div class="report-meta">
       CONFIDENTIAL & PROPRIETARY<br>
-      Doc ID: MCK-NYJ-ULTIMATE-20IN-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-ULTIMATE-4YEAR-2026 | Date: 2026. 08. 02
     </div>
   </div>
 
@@ -260,60 +263,58 @@
     
     <!-- Cover Card -->
     <div class="executive-header-card">
-      <span class="executive-tag">20 Medical Staff Capacity Master Edition</span>
-      <h1 class="executive-title">남양주 백병원(105병상/수술실 4개/현 의료진 20명)<br>2단계 스케일업 & 명의 확충 월 35억~40억 미래역산 마스터 보고서</h1>
+      <span class="executive-tag">4-Year Lifecycle Inflection Point Master Edition</span>
+      <h1 class="executive-title">남양주 백병원 (개원 만 4년차/의사 20명/직원 220명/월 30억)<br>월 35억~40억 퀀텀 점프 & 진짜 종합병원 승격 미래역산 보고서</h1>
       <p class="executive-subtitle">
-        현재 <strong>전체 의료진 20명 체제</strong>에서 약한 경쟁력과 병목을 <strong>핵심 3대 센터 명의 교체·확충</strong>으로 완벽 해갈!<br>
-        300병상 종병도 망하는 24시간 응급/심혈관 헛구호를 0으로 배제하고 <strong>[Phase 1: 월 35억~40억 흑자 정착 (+38.15억)] ➔ [Phase 2: 안전한 진짜 종합병원 승격]</strong>을 완결한 최종 집대성 마스터 보고서입니다.
+        <strong>개원 만 4년차 퀀텀 점프 골든타임 진단!</strong> 초기 안착기(월 매출 30억, 영업이익률 10%)를 지나,<br>
+        300병상 종병도 망하는 24시간 응급/심혈관 헛구호를 0으로 배제하고 <strong>핵심 센터 명의 확충으로 [Phase 1: 월 35억~40억 흑자 정착 (+38.15억)] ➔ [Phase 2: 안전한 진짜 종합병원 승격]</strong>을 완결한 최종 마스터 처방전입니다.
       </p>
+    </div>
+
+    <!-- FINANCIAL BASELINE 4 CARDS -->
+    <div class="financial-grid-4">
+      <div class="fin-card gold">
+        <div class="fin-number">개원 만 4 년차</div>
+        <h4>병원 생애주기 (Lifecycle)</h4>
+        <p>초기 안착 완료 ➔ 퀀텀 점프 2차 성장 골든타임 진입</p>
+      </div>
+
+      <div class="fin-card">
+        <div class="fin-number">20명 / 220명</div>
+        <h4>인력 구성 (Headcount)</h4>
+        <p>전체 의사 20명 및 간호/행정/파라메디컬 직원 220명 체제</p>
+      </div>
+
+      <div class="fin-card cyan">
+        <div class="fin-number">월 30 억원</div>
+        <h4>현재 월 매출 (Baseline)</h4>
+        <p>현 105병상 / 수술실 4개 가동 상태의 월 평균 실질 매출액</p>
+      </div>
+
+      <div class="fin-card green">
+        <div class="fin-number">18~20% (월 7.5억)</div>
+        <h4>목표 레버리지 이익률</h4>
+        <p>월 35억~40억 달성 시 영업이익 연간 78억~90억 원으로 2배 폭증</p>
+      </div>
     </div>
 
     <!-- SUMMARY BANNER (CORE SUMMARY FIRST) -->
     <div class="summary-callout-banner">
-      <h3><i data-lucide="crown" style="color:var(--mck-accent-gold);"></i> 현 전체 의료진 20명 체제 집대성 요약 (Executive Master Summary)</h3>
+      <h3><i data-lucide="award" style="color:var(--mck-accent-gold);"></i> 개원 만 4년차 변곡점 & 퀀텀 점프 재무 요약</h3>
       <p>
-        1. <strong>하드웨어 & 현 의료진 20명 팩트</strong>: 105병상 / 수술실 4개 / 현 월 매출 30억~32억 / **전체 의료진 규모 약 20명 (핵심 5대 센터 13명 + 영상/검진/지원 7명)**.<br>
-        2. <strong>0 차단 (Deficit Prevention)</strong>: 300병상 종병도 인건비 적자로 고사하는 24시간 응급/심혈관 헛구호 0 차단 (9a9p 365일 주간 응급실 내실 가동).<br>
-        3. <strong>1 농축 (20명 중 핵심 3대 센터 명의 교체·확충)</strong>:<br>
-        &nbsp;&nbsp;• <strong>척추관절 센터 (4명➔6명)</strong>: 척추 2(+1), 관절 3(+1), 마취 1 ➔ **에이스/엘/현대병원 완전 제압 남양주 1등!**<br>
-        &nbsp;&nbsp;• <strong>소화기 센터 (4명➔5명)</strong>: 소화기내과 4(+1) + 외과 1명 ➔ **외래/입원/검진 당일 용종절제 1위 독점!**<br>
-        &nbsp;&nbsp;• <strong>뇌신경 센터 (2명➔3명)</strong>: 신경과 3(+1) ➔ **지역사회 치매센터 활성화** 고령화 신뢰 독점!<br>
-        4. <strong>수지 및 스케일업</strong>: **Phase 1 (월 35억~40억 돌파 / 연간 +38.15억 영업이익 정착)** ➔ **Phase 2 (안정적 진짜 종합병원 승격 2차 양적 도약)**.
+        1. <strong>개원 만 4년차 진단</strong>: 개원 1~3년 차 안착기를 지나 현재 월 매출 30억 원, 영업이익률 10%(월 3억 원) 안정화 ➔ **2차 퀀텀 점프 결정적 변곡점 진입**.<br>
+        2. <strong>영업이익 레버리지 효과</strong>: 직원 220명 고정비 상태에서 명의 확충으로 매출 증분(+5억~10억 원) 발생 시, 영업이익률 **10% ➔ 18%~20%** 급상승.<br>
+        3. <strong>수지 목표상수 ($C_{\text{Goal}}$)</strong>:<br>
+        &nbsp;&nbsp;• <strong>Phase 1</strong>: 월 매출 **35억 ~ 40억 원** 정착 ➔ **월 영업이익 6.5억~7.5억 원 (연간 78억~90억 원 / 수지개선 영업이익 +\(\Delta\)EBIT = +42억~54억 원)**.<br>
+        &nbsp;&nbsp;• <strong>Phase 2</strong>: 연간 80억+ 흑자 선순환 재원으로 **안정적 진짜 종합병원 승격 2차 양적 도약!**
       </p>
-    </div>
-
-    <!-- SCQA Framework Cards -->
-    <div class="scqa-grid">
-      <div class="scqa-card">
-        <div class="scqa-step">Situation (상황)</div>
-        <h4>105병상 / 수술실 4개 / 20명</h4>
-        <p>현 월 매출 30억~32억 베이스라인 및 현 전체 의료진 20명 체제의 수술 병목 해갈 필요</p>
-      </div>
-
-      <div class="scqa-card">
-        <div class="scqa-step">Complication (전개)</div>
-        <h4>적자 수렁 헛구호의 맹점</h4>
-        <p>300병상 종병도 망하는 24시간 응급/심혈관 센터 확장 시 당직 인건비 폭발로 경영 고사 유발</p>
-      </div>
-
-      <div class="scqa-card">
-        <div class="scqa-step">Question (질문)</div>
-        <h4>핵심 승리 질문</h4>
-        <p>어떻게 하드웨어를 쥐어짜고 20명 의료진을 재편·명의 영입하여 월 35억~40억을 달성할 것인가?</p>
-      </div>
-
-      <div class="scqa-card accent">
-        <div class="scqa-step">Answer (해답)</div>
-        <h4>2단계 스케일업 역산</h4>
-        <p>Phase 1(3대 센터 명의 확충 & 흑자 +38.15억 정착) ➔ Phase 2(선순환 재원으로 진짜 종병 승격)!</p>
-      </div>
     </div>
 
     <!-- SECTION 1: MEDICAL STAFF BASELINE & UPGRADE SCHEME -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <i data-lucide="user-check"></i> 1. 현 전체 의료진 20명 체제 팩트 진단 및 명의 확충 실행 계획
+          <i data-lucide="user-check"></i> 1. 개원 만 4년차 의사 20명 / 직원 220명 명의 확충 실행 계획
         </div>
       </div>
 
@@ -321,9 +322,9 @@
         <thead>
           <tr>
             <th>센터 명칭</th>
-            <th>현재 의료진 구성 (총 20명 체제)</th>
+            <th>현재 의사 구성 (총 20명 체제)</th>
             <th>미래역산 명의 교체 및 확충 스킴 (100% 실속 강화)</th>
-            <th>경쟁력 및 수지 효과</th>
+            <th>경쟁력 및 매출/이익 레버리지 효과</th>
           </tr>
         </thead>
         <tbody>
@@ -331,13 +332,13 @@
             <td style="font-weight:800; color:var(--mck-navy);">척추관절센터</td>
             <td>척추 1명, 마취 1명, 관절 2명 (4명)</td>
             <td><strong style="color:#10B981;">척추 2명 (+1), 관절 3명 (+1), 마취 1명 (총 6명)</strong></td>
-            <td>에이스/엘/현대병원 정면 제압, 아산/경희대급 당일수술 1등</td>
+            <td>에이스/엘/현대병원 정면 제압, 아산/경희대급 수술 매출 극대화</td>
           </tr>
           <tr>
             <td style="font-weight:800; color:var(--mck-navy);">소화기센터</td>
             <td>소화기내과 3명 + 외과 1명 (4명)</td>
             <td><strong style="color:#00A3E0;">소화기내과 4명 (+1) + 외과 1명 (총 5명)</strong></td>
-            <td>외래 + 입원 + 종합검진 당일 대용종 절제 남양주 독점 1위</td>
+            <td>외래 + 입원 + 종합검진 당일 대용종 절제 매출 폭발적 전입</td>
           </tr>
           <tr>
             <td style="font-weight:800; color:var(--mck-navy);">뇌신경센터</td>
@@ -348,8 +349,8 @@
           <tr>
             <td style="font-weight:800; color:var(--mck-navy);">검진 & 응급 & 지원과</td>
             <td>검진 2명(가정/진검), 응급 2명(9a9p 365일), 영상/기타 3명 (총 7명)</td>
-            <td>현행 내실 유지 및 검진-외래 수술 연동 2배 극대화 (응급 적자 0 배제)</td>
-            <td>검진 수검자 대상 외래/입원 전환율 극대화 및 고정비 소거</td>
+            <td>직원 220명 인프라 및 검진-외래 수술 연동 2배 극대화 (응급 적자 0 배제)</td>
+            <td>검진 수검자 대상 외래/입원 전환율 극대화 및 고정비 수율 레버리지</td>
           </tr>
         </tbody>
       </table>
@@ -359,7 +360,7 @@
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <i data-lucide="network"></i> 2. 현 의료진 20명 체제 명의 확충 온톨로지 지식 그래프 (Vis.js Canvas)
+          <i data-lucide="network"></i> 2. 개원 만 4년차 퀀텀 점프 온톨로지 지식 그래프 (Vis.js Canvas)
         </div>
         <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
           Vis.js Interactive Canvas
@@ -371,55 +372,56 @@
       </div>
     </div>
 
-    <!-- SECTION 3: DSQ MATH SOLVER & 100-DAY ACTION PLAN -->
+    <!-- SECTION 3: DSQ MATH SOLVER & FINANCIAL LEVERAGE TABLE -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <i data-lucide="calculator"></i> 3. DSQ 수리 최적화 & FORWARD 7단계 100일 집행 로드맵
+          <i data-lucide="calculator"></i> 3. DSQ 수리 최적화: 월 매출 30억➔35억~40억 영업이익 레버리지
         </div>
       </div>
 
       <div class="dsq-math-box">
         <div style="font-family:var(--font-heading); font-size:1.35rem; font-weight:900; color:#FDE68A;">
-          \[ \Delta \text{Revenue}_{\text{Monthly}} = D_{\text{Direction (0.96)}} \times S_{\text{Speed (0.92)}} \times Q_{\text{Quality (0.90)}} \times 8.0\text{억원} = \mathbf{+6.35 \text{ 억원 / 월}} \]
+          \[ \Delta \text{EBIT}_{\text{Monthly}} = \text{Baseline EBIT (3억)} + \Delta \text{Revenue (5억~10억)} \times \text{Margin (45\%)} = \mathbf{+5.25\text{억 ~ 7.5\text{억원 / 월}}} \]
         </div>
         <p style="font-size:0.85rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">
-          결과: 현 월 30억~32억 원 ➔ **월 36.35억~40.0억 원 흑자 정착** (연간 영업이익 **+38.15억 원** 정량 달성 후 종합병원 승격!)
+          손익 구조: 월 매출 30억(영업이익률 10%) ➔ **월 매출 35억~40억 달성 시 영업이익률 18%~20%(월 6.5억~7.5억 원 / 연간 78억~90억 원)** 폭발!
         </p>
       </div>
 
       <table class="mck-table">
         <thead>
           <tr>
-            <th>100일 집행 단계</th>
-            <th>FORWARD 7단계</th>
-            <th>현장 명의 영입 및 월 35억~40억 돌파 실행 액션 (Action Plan)</th>
+            <th>재무 지표 (Financial Metric)</th>
+            <th>현재 상태 (개원 만 4년 Baseline)</th>
+            <th style="color:var(--mck-accent-cyan);">Phase 1 목표상수 (월 35억 달성)</th>
+            <th style="color:#10B981;">Phase 1 쥐어짜기 최대 (월 40억 달성)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="font-weight:800; color:var(--mck-navy);">Month 1 (D+1 ~ D+30)</td>
-            <td style="font-weight:800; color:var(--mck-accent-cyan);">顧 (고) & 飛 (비)</td>
-            <td>
-              • <strong>300병상 종병 적자 모델 0 차단</strong>: 24시간 응급/심혈관 헛구호 0 차단 선언.<br>
-              • <strong>목표상수 고정</strong>: "월 35억~40억 돌파 & 척추관절/소화기/치매 1위" 상수 선포.
-            </td>
+            <td style="font-weight:800;">월 평균 매출액</td>
+            <td>월 30.0 억원</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">월 35.0 억원 (+5억)</td>
+            <td style="font-weight:800; color:#10B981;">월 40.0 억원 (+10억)</td>
           </tr>
           <tr>
-            <td style="font-weight:800; color:var(--mck-navy);">Month 2 (D+31 ~ D+60)</td>
-            <td style="font-weight:800; color:var(--mck-accent-cyan);">結 (결) & 前 (전)</td>
-            <td>
-              • <strong>명의 영입 완결</strong>: 척추(+1), 관절(+1), 소화기내과(+1), 신경과(+1) 명의 영입 완료.<br>
-              • <strong>수술방 4개 풀가동</strong>: 당일 수술 패스트트랙 및 치매센터 정밀 검진 가동.
-            </td>
+            <td style="font-weight:800;">월 영업이익액 (EBIT)</td>
+            <td>월 3.0 억원</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">월 5.25 억원 (+2.25억)</td>
+            <td style="font-weight:800; color:#10B981;">월 7.5 억원 (+4.5억)</td>
           </tr>
           <tr>
-            <td style="font-weight:800; color:var(--mck-navy);">Month 3 (D+61 ~ D+100)</td>
-            <td style="font-weight:800; color:var(--mck-accent-cyan);">資 (자) · 逆 (역) · 行 (행)</td>
-            <td>
-              • <strong>지역 제압 마케팅</strong>: 에이스/엘/현대병원 수술 환자 유입 차단 및 검진/입원 가동.<br>
-              • <strong>월 35억~40억 정착</strong>: 100일 만에 월 35억+ 흑자 정착 ➔ <strong>Phase 2 진짜 종합병원 승격 준비!</strong>
-            </td>
+            <td style="font-weight:800;">영업이익률 (EBIT Margin)</td>
+            <td>약 10.0 %</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">약 15.0 % (상승)</td>
+            <td style="font-weight:900; color:#10B981; font-size:1.05rem;">약 18.75 ~ 20.0 % (대폭 상승)</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">연간 환산 영업이익액</td>
+            <td>연간 36.0 억원</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">연간 63.0 억원</td>
+            <td style="font-weight:900; color:#10B981; font-size:1.05rem;">연간 90.0 억원 (흑자 선순환 완결)</td>
           </tr>
         </tbody>
       </table>
@@ -428,30 +430,30 @@
   </div>
 
   <footer>
-    McKinsey & Company Strategy Practice | Namyangju Paik Hospital 20-Staff Ultimate Master Edition 2026<br>
+    McKinsey & Company Strategy Practice | Namyangju Paik Hospital 4-Year Anniversary Edition 2026<br>
     Copyright © McKinsey & Company. All Rights Reserved.
   </footer>
 
   <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (20 MEDICAL STAFF)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (4-YEAR INFLECTION POINT)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
-        { id: 'paik_master_root', label: '남양주 백병원 (105병상/수술실4개/현20명)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 돌파 흑자정착', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'paik_master_root', label: '남양주 백병원 (개원만4년/의사20/직원220/월30억)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (이익률 18~20%)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
         { id: 'spine_center_1st', label: '척추관절 1등 (척추2+관절3+마취1)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'gastro_center_1st', label: '소화기 1위 (내과4+외과1 검진/입원)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'neuro_dementia', label: '신경과 3명 (치매센터 활성화)', color: { background: '#F59E0B', border: '#FFF' }, size: 20, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
         { id: 'cut_300b_trap', label: '0(배제): 300병상 종병 적자유발 24시간 응급 0차단', color: { background: '#EF4444', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
-        { id: 'phase2_general_hosp', label: 'Phase 2: 진짜 종합병원 승격 (2차 도약)', color: { background: '#8B5CF6', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
+        { id: 'phase2_general_hosp', label: 'Phase 2: 진짜 종합병원 승격 (연간 90억 흑자전입)', color: { background: '#8B5CF6', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
       ]);
 
       const edges = new vis.DataSet([
-        { from: 'paik_master_root', to: 'phase1_target', label: 'squeezes_capacity_to', arrows: 'to' },
+        { from: 'paik_master_root', to: 'phase1_target', label: 'leverages_fixed_costs', arrows: 'to' },
         { from: 'paik_master_root', to: 'cut_300b_trap', label: 'eliminates_deficit_trap', arrows: 'to' },
         { from: 'phase1_target', to: 'spine_center_1st', label: 'beats_ace_l_hyundai', arrows: 'to' },
         { from: 'phase1_target', to: 'gastro_center_1st', label: 'monopolizes_checkup', arrows: 'to' },
