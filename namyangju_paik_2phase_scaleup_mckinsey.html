@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCKINSEY & COMPANY | 남양주 백병원 2단계 스케일업 미래역산 마스터 보고서</title>
+  
+  <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <style>
+    :root {
+      /* McKinsey Signature Palette */
+      --mck-navy: #051C2C;
+      --mck-deep-blue: #002B49;
+      --mck-accent-cyan: #00A3E0;
+      --mck-accent-gold: #D4AF37;
+      --mck-bg-gray: #F4F6F9;
+      --mck-card-bg: #FFFFFF;
+      --text-main: #111827;
+      --text-sub: #4B5563;
+      --border-light: #E5E7EB;
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-main: 'Pretendard', -apple-system, sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-code: 'Fira Code', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--mck-bg-gray);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Bar */
+    .mck-top-bar {
+      background-color: var(--mck-navy);
+      color: #FFFFFF;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid var(--mck-accent-gold);
+    }
+    .mck-logo-group { display: flex; align-items: center; gap: 1rem; }
+    .mck-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+    }
+    .mck-sub-title {
+      font-size: 0.78rem;
+      color: var(--mck-accent-cyan);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .report-meta {
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: right;
+    }
+
+    .report-container {
+      max-width: 1280px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Cover Card */
+    .executive-header-card {
+      background: linear-gradient(135deg, var(--mck-deep-blue) 0%, var(--mck-navy) 100%);
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 20px 40px rgba(5, 28, 44, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .executive-tag {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--mck-accent-gold);
+      color: #FDE68A;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .executive-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      color: #FFFFFF;
+    }
+    .executive-subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 980px;
+    }
+
+    /* SCQA 4 Grid */
+    .scqa-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .scqa-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--mck-navy);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .scqa-card.accent { border-top-color: var(--mck-accent-gold); background: #FFFDF5; }
+    .scqa-step { font-family: var(--font-code); font-size: 0.75rem; font-weight: 800; color: var(--mck-accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .scqa-card h4 { font-family: var(--font-heading); font-size: 1.08rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.6rem; }
+    .scqa-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.55; }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--mck-card-bg);
+      border-radius: 16px;
+      padding: 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border-light);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--mck-bg-gray);
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-title i { color: var(--mck-accent-cyan); }
+
+    /* 2 Phase Scaleup Cards */
+    .phase-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .phase-card {
+      border-radius: 14px;
+      padding: 1.8rem;
+      border: 2px solid var(--border-light);
+      background: #FFFFFF;
+    }
+    .phase-card.p1 { border-color: #10B981; background: #F0FDF4; }
+    .phase-card.p2 { border-color: #00A3E0; background: #F0F9FF; }
+
+    .phase-tag {
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+    .tag-p1 { background: rgba(16, 185, 129, 0.2); color: #047857; border: 1px solid #34D399; }
+    .tag-p2 { background: rgba(0, 163, 224, 0.2); color: #0369A1; border: 1px solid #38BDF8; }
+
+    .phase-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      margin-bottom: 0.8rem;
+    }
+    .phase-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.6; }
+
+    /* Canvas Box */
+    .ontology-graph-container {
+      width: 100%;
+      height: 540px;
+      background: radial-gradient(circle at 50% 50%, #0B1120 0%, #030712 100%);
+      border-radius: 14px;
+      border: 2px solid var(--mck-navy);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+    #vis-scaleup-ontology { width: 100%; height: 100%; }
+
+    /* DSQ Math Box */
+    .dsq-math-box {
+      background: var(--mck-navy);
+      color: #FFFFFF;
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--mck-accent-gold);
+    }
+
+    table.mck-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table.mck-table th {
+      background: var(--mck-navy);
+      color: #FFFFFF;
+      padding: 1rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: left;
+    }
+    table.mck-table td {
+      padding: 0.95rem 1.2rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-main);
+    }
+    table.mck-table tr:nth-child(even) { background: #F9FAFB; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border-light);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="mck-top-bar">
+    <div class="mck-logo-group">
+      <div class="mck-brand-title">McKinsey & Company</div>
+      <div class="mck-sub-title">| 2-Phase Scale-Up Master Practice</div>
+    </div>
+    <div class="report-meta">
+      CONFIDENTIAL & PROPRIETARY<br>
+      Doc ID: MCK-NYJ-SCALEUP-2026 | Date: 2026. 08. 02
+    </div>
+  </div>
+
+  <div class="report-container">
+    
+    <!-- Cover Card -->
+    <div class="executive-header-card">
+      <span class="executive-tag">Master Strategy Consultation 2026</span>
+      <h1 class="executive-title">남양주 백병원 2단계 스케일업 (2-Phase Scale-Up)<br>미래역산 전략 마스터 보고서</h1>
+      <p class="executive-subtitle">
+        어설픈 무늬만 종합병원으로 확장 시 발생하는 적자 팽창과 무뇌형 부실을 선제 차단하고,<br>
+        <strong>[Phase 1: 실속형 질적 성장 & 3대 센터 독점 (+38.15억)] ➔ [Phase 2: 선순환 흑자재원 기반 진짜 종합병원 승격]</strong> 2단계 역산 로드맵을 확정한 맥킨지 최종 마스터 보고서입니다.
+      </p>
+    </div>
+
+    <!-- SCQA Framework Cards -->
+    <div class="scqa-grid">
+      <div class="scqa-card">
+        <div class="scqa-step">Situation (상황)</div>
+        <h4>남양주 의료 입지 지형</h4>
+        <p>인근 남양주 현대병원(350병상 종합병원)과 경쟁 속에서 80만 지역 주민 유출을 막을 성장 로드맵 필요</p>
+      </div>
+
+      <div class="scqa-card">
+        <div class="scqa-step">Complication (전개)</div>
+        <h4>무늬만 종합병원의 맹점</h4>
+        <p>어설프게 과를 신설(소아과/산부인과 등) 시 고정비 폭발 및 무뇌형 적자 팽창 ➔ <strong>분석 마비</strong> 유발</p>
+      </div>
+
+      <div class="scqa-card">
+        <div class="scqa-step">Question (질문)</div>
+        <h4>핵심 승리 질문</h4>
+        <p>어떻게 실속(적정이윤)을 차곡차곡 쌓아 현대병원을 제압하고 리스크 없이 종합병원으로 승격할 것인가?</p>
+      </div>
+
+      <div class="scqa-card accent">
+        <div class="scqa-step">Answer (해답)</div>
+        <h4>2단계 스케일업 전략</h4>
+        <p>Phase 1(질적 3대센터 1위 & 흑자 +38.15억) 성공 후, Phase 2(안정적 진짜 종합병원) 2차 도약!</p>
+      </div>
+    </div>
+
+    <!-- SECTION 1: 2-PHASE SCALE-UP STRATEGY ARCHITECTURE -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="layers"></i> 1. 박개성 컨설팅 기반 2단계 스케일업 (2-Phase Scale-Up) 건축 아키텍처
+        </div>
+      </div>
+
+      <div class="phase-grid-2">
+        <div class="phase-card p1">
+          <span class="phase-tag tag-p1">Phase 1: 질적 성장 & 실속 독점 (현재 ~ 2027년 내년)</span>
+          <h4>Phase 1: 3대 핵심 센터 1위 & 흑자 정착</h4>
+          <p>
+            • <strong>0/1 이진 선택</strong>: 적자성 진료과 0 차단, 3대 센터(소화기 4명, 관절 3명, 신경 3명) 100% 농축(1).<br>
+            • <strong>당일 수술 패스트트랙</strong>: 현대병원의 다과 분산 약점을 공격하여 당일 검사-당일 수술 1위 달성.<br>
+            • <strong>수지 목표상수</strong>: 연간 <strong>\(\Delta \pi = +38.15 \text{ 억원}\)</strong> 적정이윤 흑자 구조 완전 확립.
+          </p>
+        </div>
+
+        <div class="phase-card p2">
+          <span class="phase-tag tag-p2">Phase 2: 양적 도약 & 진짜 종합병원 (가까운 미래 2029년)</span>
+          <h4>Phase 2: 선순환 흑자재원 기반 2차 스케일업</h4>
+          <p>
+            • <strong>안정적 2차 도약</strong>: Phase 1에서 쌓은 압도적 남양주 1위 브랜드 신뢰와 흑자 선순환 재원 사용.<br>
+            • <strong>무리스크 승격</strong>: 인력난 및 고정비 적자 리스크 없이 **[진짜 종합병원]**으로 안전하게 격상.<br>
+            • <strong>지속가능 발전</strong>: 경기 동북부 거점 엑설런트 병원으로의 영구적 도약 완결.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: REQUIRED ONTOLOGY GRAPH CANVAS (MUST HAVE) -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="network"></i> 2. 2단계 스케일업 미래역산 온톨로지 지식 그래프 (Vis.js Interactive Canvas)
+        </div>
+        <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
+          Vis.js Canvas Attached
+        </span>
+      </div>
+
+      <div class="ontology-graph-container">
+        <div id="vis-scaleup-ontology"></div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: DSQ MATHEMATICAL SOLVER & 100-DAY ROADMAP -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="calculator"></i> 3. DSQ 수리 최적화 산출 & FORWARD 7단계 100일 로드맵
+        </div>
+      </div>
+
+      <div class="dsq-math-box">
+        <div style="font-family:var(--font-heading); font-size:1.35rem; font-weight:900; color:#FDE68A;">
+          \[ \Delta \pi_{\text{Phase 1}} = D_{\text{Direction (0.96)}} \times S_{\text{Speed (0.92)}} \times Q_{\text{Quality (0.90)}} \times 48.0 = \mathbf{+38.15 \text{ 억원 / 년}} \]
+        </div>
+        <p style="font-size:0.85rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">
+          Phase 1 실속형 흑자구조 정착 ➔ 연간 +38.15억 재원으로 Phase 2 종합병원 2차 스케일업 보증
+        </p>
+      </div>
+
+      <table class="mck-table">
+        <thead>
+          <tr>
+            <th>100일 집행 단계</th>
+            <th>FORWARD 7단계</th>
+            <th>Phase 1 질적 성장 100일 쾌속 실행 액션</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:800;">D+1 ~ 30일</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">顧 (고) & 飛 (비)</td>
+            <td>현대병원 다과 분산 약점 공격 선언 & 미래 목표상수(+38.15억) 고정</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">D+31 ~ 60일</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">結 (결) & 前 (전)</td>
+            <td>소화기(4명), 관절(3명), 신경(3명) 명의 영입 및 수술장 4M 농축 배치</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">D+61 ~ 90일</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">資 (자) & 逆 (역)</td>
+            <td>'당일 검사-당일 수술 패스트트랙' 오픈 & 예약 대기 맹점 선제 수술</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">D+100일 완결</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">行 (행)</td>
+            <td>남양주 3대 센터 독점 1위 및 적정이윤 흑자 구조 완전 정착 ➔ Phase 2 준비</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    McKinsey & Company Strategy Practice | Namyangju Paik Hospital 2-Phase Scale-Up Master 2026<br>
+    Copyright © McKinsey & Company. All Rights Reserved.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // VIS.JS ONTOLOGY CANVAS FOR 2-PHASE SCALEUP
+    window.addEventListener('load', function() {
+      const container = document.getElementById('vis-scaleup-ontology');
+      if (!container) return;
+
+      const nodes = new vis.DataSet([
+        { id: 'scaleup_root', label: '남양주 백병원 2단계 스케일업', color: { background: '#D4AF37', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'phase1', label: 'Phase 1: 질적 성장 (3대 센터 1위)', color: { background: '#10B981', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'phase2', label: 'Phase 2: 양적 도약 (진짜 종합병원)', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'gastro_4', label: '소화기내과 4명 확충', color: { background: '#38BDF8', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
+        { id: 'joint_3', label: '관절센터 3명 확충', color: { background: '#38BDF8', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
+        { id: 'neuro_3', label: '신경과 3명 확충', color: { background: '#38BDF8', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
+        { id: 'cut_empty_hosp', label: '0(배제): 무늬만 종합병원 적자 0차단', color: { background: '#EF4444', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
+        { id: 'profit_38', label: '적정이윤 흑자 +38.15억원', color: { background: '#F59E0B', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } }
+      ]);
+
+      const edges = new vis.DataSet([
+        { from: 'scaleup_root', to: 'phase1', label: 'step_1_qualitative', arrows: 'to' },
+        { from: 'phase1', to: 'gastro_4', label: 'expands', arrows: 'to' },
+        { from: 'phase1', to: 'joint_3', label: 'expands', arrows: 'to' },
+        { from: 'phase1', to: 'neuro_3', label: 'expands', arrows: 'to' },
+        { from: 'scaleup_root', to: 'cut_empty_hosp', label: 'eliminates_risk', arrows: 'to' },
+        { from: 'phase1', to: 'profit_38', label: 'generates_ROI', arrows: 'to' },
+        { from: 'profit_38', to: 'phase2', label: 'funds_scaleup_to', arrows: 'to' }
+      ]);
+
+      const data = { nodes: nodes, edges: edges };
+
+      const options = {
+        nodes: { shape: 'dot', borderWidth: 2, shadow: { enabled: true, color: 'rgba(212, 175, 55, 0.4)', size: 10 } },
+        edges: {
+          width: 2,
+          color: { color: 'rgba(0, 163, 224, 0.6)', highlight: '#D4AF37' },
+          arrows: { to: { enabled: true, scaleFactor: 0.7 } },
+          font: { size: 11, color: '#FDE68A', face: 'Fira Code', strokeWidth: 3, strokeColor: '#051C2C' },
+          smooth: { type: 'continuous' }
+        },
+        physics: {
+          solver: 'forceAtlas2Based',
+          forceAtlas2Based: { gravitationalConstant: -100, centralGravity: 0.01, springLength: 180 },
+          maxVelocity: 25, stabilization: { iterations: 150 }
+        },
+        interaction: { hover: true, dragNodes: true, zoomView: true, dragView: true }
+      };
+
+      new vis.Network(container, data, options);
+    });
+  </script>
+</body>
+</html>
