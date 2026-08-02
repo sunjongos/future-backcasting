@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCKINSEY & COMPANY | 남양주 백병원 박개성 병원 나무 구조 & 지속성장 미래역산 마스터 보고서 11.0</title>
+  <title>MCKINSEY & COMPANY | 남양주 백병원 유기적 나무 모델 기반 경영 진단 & 미래역산 최종 마스터 보고서 12.0</title>
   
   <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,8 +121,8 @@
       max-width: 980px;
     }
 
-    /* PARK GAESEONG HOSPITAL TREE DIAGNOSTICS CARD */
-    .tree-card {
+    /* ORGANIC TREE SVG GRAPHIC CONTAINER */
+    .organic-tree-card {
       background: #FFFFFF;
       border-radius: 16px;
       padding: 2.2rem;
@@ -130,32 +130,32 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       border: 2px solid #10B981;
     }
-    .tree-grid-4 {
+    .organic-tree-viewport {
+      width: 100%;
+      height: 580px;
+      background: #0B1120;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    /* 5 ELEGANT FRUITS GRID */
+    .fruits-grid-5 {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
       margin-top: 1.5rem;
     }
-    .tree-node-card {
-      background: var(--mck-bg-gray);
-      border-radius: 12px;
-      padding: 1.5rem;
-      border-top: 4px solid var(--mck-navy);
+    .fruit-card {
+      background: #FDF2F8;
+      border: 1px solid #FBCFE8;
+      border-top: 4px solid #EC4899;
+      border-radius: 10px;
+      padding: 1rem;
     }
-    .tree-node-card.soil { border-top-color: #D4AF37; }
-    .tree-node-card.trunk { border-top-color: #00A3E0; }
-    .tree-node-card.branches { border-top-color: #8B5CF6; }
-    .tree-node-card.fruits { border-top-color: #10B981; background: #ECFDF5; }
-
-    .tree-node-card h4 {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--mck-navy);
-      margin-bottom: 0.5rem;
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .tree-node-card p { font-size: 0.86rem; color: var(--text-sub); line-height: 1.55; }
+    .fruit-card h4 { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #BE185D; margin-bottom: 0.3rem; }
+    .fruit-card p { font-size: 0.8rem; color: var(--text-sub); line-height: 1.45; }
 
     /* QUANTUM LEAP VISUALIZATION CARD */
     .quantum-visual-card {
@@ -294,11 +294,11 @@
   <div class="mck-top-bar">
     <div class="mck-logo-group">
       <div class="mck-brand-title">McKinsey & Company</div>
-      <div class="mck-sub-title">| Park Gaeseong Hospital Tree Diagnostics Release 11.0</div>
+      <div class="mck-sub-title">| Park Gaeseong Organic Hospital Tree Release 12.0</div>
     </div>
     <div class="report-meta">
       CONFIDENTIAL & PROPRIETARY<br>
-      Doc ID: MCK-NYJ-HOSPITAL-TREE-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-ORGANIC-TREE-2026 | Date: 2026. 08. 02
     </div>
   </div>
 
@@ -306,57 +306,186 @@
     
     <!-- Cover Card -->
     <div class="executive-header-card">
-      <span class="executive-tag">Park Gaeseong Hospital Tree Architecture Release 11.0</span>
-      <h1 class="executive-title">박개성 병원 나무 구조(Hospital Tree) 진단 기반<br>위기 극복 & 200병상 지속 성장 미래역산 마스터 보고서</h1>
+      <span class="executive-tag">Organic Hospital Tree Master Architecture Release 12.0</span>
+      <h1 class="executive-title">박개성 대표 유기적 나무 모델(Organic Hospital Tree)<br>병원 경영 진단 & 미래역산 200병상 도약 최종 마스터 보고서</h1>
       <p class="executive-subtitle">
-        <strong>토지·뿌리(미션·거버넌스) ➔ 줄기(4M 역량) ➔ 가지(12대 테마) ➔ 열매(200병상 퀀텀도약) 나무 구조 통합!</strong><br>
-        정부 비급여 통제의 퍼펙트 스톰 위기를 4M 명의 농축과 3단계 스케일업으로 돌파하고, <strong>[Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현위치 종병 승격] ➔ [Phase 3: 토지 매입 200병상 메가 종병 도약]</strong>의 영구적 성장 유전자를 완성한 마스터 처방전입니다.
+        <strong>박개성 대표의 오리지널 『유기적 나무 모델 기반 병원 경영 진단 시스템』 100% 완전 이식!</strong><br>
+        1.뿌리(사명) ➔ 2.토양(거버넌스) ➔ 3.태풍(비급여통제위기) ➔ 4.줄기(4M근육) ➔ 5.물관(CHIP) ➔ 6.자원배분 ➔ 7.가지(12테마) ➔ 8.5대 결실 열매(200병상 퀀텀도약)를 완결한 최상위 보고서입니다.
       </p>
     </div>
 
-    <!-- PARK GAESEONG HOSPITAL TREE DIAGNOSTICS CARD (박개성 병원 나무 구조 진단) -->
-    <div class="tree-card">
-      <div class="section-header" style="margin-bottom:1rem; padding-bottom:0.5rem; border-bottom:none;">
+    <!-- ORGANIC TREE SVG GRAPHIC VIEWPORT (박개성 오리지널 나무 그래픽 100% 완전 이식) -->
+    <div class="organic-tree-card">
+      <div class="section-header" style="margin-bottom:0.5rem; padding-bottom:0.5rem; border-bottom:none;">
         <div class="section-title">
-          <i data-lucide="trees" style="color:#10B981;"></i> 박개성 대표 병원 나무 구조 (Hospital Tree Diagnostics) & 위기극복 역량
+          <i data-lucide="trees" style="color:#10B981;"></i> 박개성 대표 오리지널 유기적 병원 나무 지도 (Organic Hospital Tree Map)
         </div>
       </div>
-      <p style="font-size:0.92rem; color:var(--text-sub); line-height:1.65;">
-        병원 경영을 살아있는 나무에 비유하여, **토양과 뿌리가 건강해야 가지가 풍성해지고 폭풍우(비급여 억제 정책 등 퍼펙트 스톰)에도 흔들리지 않는 영구적 결실(200병상 대약진)**을 맺는다는 박개성 대표의 시그니처 4단계 구조 프레임워크입니다.
+      <p style="font-size:0.92rem; color:var(--text-sub);">
+        뿌리(사명 \(C_{\text{Mission}}\))와 토양(개인병원 지배구조 \(C_{\text{Gov}}\))이 굳건해야 3대 퍼펙트 스톰 태풍을 견디고 4M 줄기와 12대 가지를 거쳐 5대 결실 열매(200병상 대약진)를 맺습니다.
       </p>
 
-      <div class="tree-grid-4">
-        <div class="tree-node-card soil">
-          <h4><i data-lucide="sprout"></i> 1. 토양 & 뿌리 (Soil & Root)</h4>
-          <p>
-            • <strong>토양</strong>: 당일검사-당일수술 쾌속 필수의료 미션(\(C_{\text{Mission}}\)).<br>
-            • <strong>뿌리</strong>: 개인병원 100% 지배구조 보존(\(C_{\text{Gov}}\)) & 220명 직원 단결력.
-          </p>
-        </div>
+      <div class="organic-tree-viewport">
+        <svg class="tree-graphic" style="width:100%; height:100%;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1200 860">
+          <defs>
+            <radialGradient cx="50%" cy="50%" id="soilGlow" r="50%">
+              <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.25"></stop>
+              <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"></stop>
+            </radialGradient>
+            <linearGradient id="rootGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#F43F5E"></stop><stop offset="100%" stop-color="#991B1B"></stop>
+            </linearGradient>
+            <linearGradient id="trunkGrad" x1="0%" x2="0%" y1="100%" y2="0%">
+              <stop offset="0%" stop-color="#064E3B"></stop><stop offset="50%" stop-color="#10B981"></stop><stop offset="100%" stop-color="#06B6D4"></stop>
+            </linearGradient>
+            <linearGradient id="branchGrad" x1="0%" x2="0%" y1="100%" y2="0%">
+              <stop offset="0%" stop-color="#0284C7"></stop><stop offset="100%" stop-color="#38BDF8"></stop>
+            </linearGradient>
+            <filter height="160%" id="softGlow" width="160%" x="-30%" y="-30%">
+              <feGaussianBlur result="blur" stdDeviation="6"></feGaussianBlur>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+            </filter>
+            <filter height="180%" id="rubyLaserGlow" width="180%" x="-40%" y="-40%">
+              <feGaussianBlur result="blur" stdDeviation="7"></feGaussianBlur>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+            </filter>
+          </defs>
 
-        <div class="tree-node-card trunk">
-          <h4><i data-lucide="shield-check"></i> 2. 줄기 (Trunk & 4M)</h4>
-          <p>
-            • <strong>Manpower</strong>: 척추관절 6인, 소화기 5인, 신경과 3인 명의 농축.<br>
-            • <strong>Management</strong>: 9a9p 365일 응급 고정(당직 적자 0) & 재원일수 4.5일 단축.
-          </p>
-        </div>
+          <!-- 3. REALITY CRISIS & PERFECT STORM -->
+          <g id="environment-zone">
+            <path d="M 60 330 Q 250 230 600 300 T 1140 270" fill="none" stroke="rgba(148, 163, 184, 0.2)" stroke-dasharray="6,6" stroke-width="1.5"></path>
+            <g class="tree-node">
+              <rect fill="rgba(15, 23, 42, 0.9)" filter="url(#softGlow)" height="54" rx="14" stroke="#94A3B8" stroke-width="1.5" width="260" x="40" y="270"></rect>
+              <text fill="#FFF" font-size="15" font-weight="800" text-anchor="middle" x="170" y="294">비급여통제 · 필수의료인력난 · 과세</text>
+              <text fill="#94A3B8" font-size="11.5" font-weight="700" text-anchor="middle" x="170" y="313">3. 현실 퍼펙트 스톰 &amp; 3대 태풍</text>
+            </g>
+          </g>
 
-        <div class="tree-node-card branches">
-          <h4><i data-lucide="git-fork"></i> 3. 가지 & 잎 (Branches)</h4>
-          <p>
-            • <strong>12대 실행 테마</strong>: T1(전략)~T12(신사업).<br>
-            • 수술실 4개 공동구매 20배 레버리지 & 당일 대용종 절제 패스트트랙.
-          </p>
-        </div>
+          <!-- 1 & 2. GOVERNANCE SOIL & MISSION ROOT -->
+          <g id="root-zone">
+            <path d="M 600 590 Q 460 640 330 700" fill="none" opacity="0.85" stroke="url(#rootGrad)" stroke-linecap="round" stroke-width="10"></path>
+            <path d="M 600 590 Q 600 650 600 720" fill="none" opacity="0.9" stroke="url(#rootGrad)" stroke-linecap="round" stroke-width="14"></path>
+            <path d="M 600 590 Q 740 640 870 700" fill="none" opacity="0.85" stroke="url(#rootGrad)" stroke-linecap="round" stroke-width="10"></path>
+            <ellipse cx="600" cy="590" fill="url(#soilGlow)" rx="420" ry="45"></ellipse>
 
-        <div class="tree-node-card fruits">
-          <h4><i data-lucide="trophy"></i> 4. 열매 & 도약 (Fruits)</h4>
-          <p>
-            • <strong>Phase 1</strong>: 월 35억~40억 (연90억 흑자).<br>
-            • <strong>Phase 2</strong>: 현위치 105병상 종병 승격.<br>
-            • <strong>Phase 3</strong>: 토지매입 200병상 메가종병 60억 도약!
-          </p>
+            <!-- 2. Governance Soil -->
+            <g class="tree-node">
+              <rect fill="rgba(245, 158, 11, 0.2)" filter="url(#softGlow)" height="48" rx="24" stroke="#F59E0B" stroke-width="1.5" width="460" x="370" y="565"></rect>
+              <text fill="#FFF" font-size="17" font-weight="800" text-anchor="middle" x="600" y="586">개인병원 지배구조 100% 보존 (Governance)</text>
+              <text fill="#FDE68A" font-size="11.5" font-weight="700" text-anchor="middle" x="600" y="603">2. 토양: 대표님 중심 실속 흑자 경영 토양</text>
+            </g>
+
+            <!-- 1. MISSION ROOT -->
+            <g class="tree-node">
+              <circle cx="600" cy="685" fill="url(#rootGrad)" filter="url(#rubyLaserGlow)" r="52" stroke="#FFE4E6" stroke-width="2.5"></circle>
+              <text fill="#FFF" font-size="18" font-weight="900" text-anchor="middle" x="600" y="677">사명 (Mission)</text>
+              <text fill="#FECDD3" font-size="12" font-weight="800" text-anchor="middle" x="600" y="698">1. 뿌리 : 당일수술필수의료</text>
+            </g>
+          </g>
+
+          <!-- 4, 5, 6. TRUNK, CHIP, NUTRIENT -->
+          <g id="trunk-zone">
+            <path d="M 575 565 C 570 470 565 370 580 280 L 620 280 C 635 370 630 470 625 565 Z" fill="url(#trunkGrad)" opacity="0.9"></path>
+            <path d="M 600 635 L 600 120" fill="none" filter="url(#rubyLaserGlow)" stroke="#F43F5E" stroke-dasharray="12,6" stroke-width="4.5">
+              <animate attributeName="stroke-dashoffset" dur="0.65s" from="36" repeatCount="indefinite" to="0"></animate>
+            </path>
+
+            <!-- 4. 4M Muscle -->
+            <g class="tree-node">
+              <rect fill="rgba(16, 185, 129, 0.25)" filter="url(#softGlow)" height="52" rx="14" stroke="#10B981" stroke-width="1.5" width="240" x="260" y="420"></rect>
+              <text fill="#FFF" font-size="16" font-weight="800" text-anchor="middle" x="380" y="442">4대 근육 명의 농축 (4M)</text>
+              <text fill="#A7F3D0" font-size="11" font-weight="700" text-anchor="middle" x="380" y="460">4. 줄기: 척추관절6인/소화기5인/신경과3인</text>
+            </g>
+
+            <!-- 5. CHIP Mentality -->
+            <g class="tree-node">
+              <rect fill="rgba(6, 182, 212, 0.25)" filter="url(#softGlow)" height="52" rx="14" stroke="#06B6D4" stroke-width="1.5" width="230" x="710" y="420"></rect>
+              <text fill="#FFF" font-size="16" font-weight="800" text-anchor="middle" x="825" y="442">CHIP 4대 근성 멘탈리티</text>
+              <text fill="#BAE6FD" font-size="11" font-weight="700" text-anchor="middle" x="825" y="460">5. 물관: 호기심 · 겸손 · 주도 · 집요</text>
+            </g>
+
+            <!-- 6. Limited Resources -->
+            <g class="tree-node">
+              <circle cx="600" cy="447" fill="rgba(139, 92, 246, 0.35)" filter="url(#softGlow)" r="36" stroke="#A78BFA" stroke-width="1.5"></circle>
+              <text fill="#FFF" font-size="14" font-weight="800" text-anchor="middle" x="600" y="443">자원 배분</text>
+              <text fill="#DDD6FE" font-size="10" font-weight="700" text-anchor="middle" x="600" y="458">6. 9a9p 응급고정</text>
+            </g>
+          </g>
+
+          <!-- 7 & 8. CANOPY BRANCHES & 5 ELEGANT FRUITS -->
+          <g id="canopy-zone">
+            <path d="M 580 280 Q 380 210 140 165" fill="none" opacity="0.8" stroke="url(#branchGrad)" stroke-linecap="round" stroke-width="5"></path>
+            <path d="M 592 280 Q 440 160 340 115" fill="none" opacity="0.8" stroke="url(#branchGrad)" stroke-linecap="round" stroke-width="5"></path>
+            <path d="M 600 280 L 600 115" fill="none" opacity="0.9" stroke="url(#branchGrad)" stroke-linecap="round" stroke-width="6"></path>
+            <path d="M 608 280 Q 760 160 860 115" fill="none" opacity="0.8" stroke="url(#branchGrad)" stroke-linecap="round" stroke-width="5"></path>
+            <path d="M 620 280 Q 820 210 1060 165" fill="none" opacity="0.8" stroke="url(#branchGrad)" stroke-linecap="round" stroke-width="5"></path>
+
+            <!-- 7. 12 Execution Themes -->
+            <g class="tree-node">
+              <rect fill="rgba(59, 130, 246, 0.35)" filter="url(#softGlow)" height="48" rx="16" stroke="#38BDF8" stroke-width="2" width="270" x="465" y="250"></rect>
+              <text fill="#FFF" font-size="17" font-weight="800" text-anchor="middle" x="600" y="271">12가지 현장 실행 테마 (T1~T12)</text>
+              <text fill="#93C5FD" font-size="11" font-weight="700" text-anchor="middle" x="600" y="289">7. 가지: 수술실4개 공동구매 20배 레버리지</text>
+            </g>
+
+            <!-- 8-1. Financial Health -->
+            <g class="tree-node">
+              <circle cx="140" cy="165" fill="rgba(236, 72, 153, 0.4)" filter="url(#softGlow)" r="42" stroke="#F472B6" stroke-width="1.5"></circle>
+              <text fill="#FFF" font-size="14" font-weight="800" text-anchor="middle" x="140" y="160">Phase 1 월40억</text>
+              <text fill="#FBCFE8" font-size="10.5" font-weight="700" text-anchor="middle" x="140" y="176">8-1. 수지 흑자 90억</text>
+            </g>
+
+            <!-- 8-2. Clinical Excellence -->
+            <g class="tree-node">
+              <circle cx="340" cy="115" fill="rgba(236, 72, 153, 0.4)" filter="url(#softGlow)" r="42" stroke="#F472B6" stroke-width="1.5"></circle>
+              <text fill="#FFF" font-size="14" font-weight="800" text-anchor="middle" x="340" y="110">임상 탁월성</text>
+              <text fill="#FBCFE8" font-size="10.5" font-weight="700" text-anchor="middle" x="340" y="126">8-2. 수술 1위 독점</text>
+            </g>
+
+            <!-- 8-3. Patient Experience & Trust -->
+            <g class="tree-node">
+              <circle cx="600" cy="65" fill="rgba(244, 63, 94, 0.65)" filter="url(#rubyLaserGlow)" r="48" stroke="#FF70A6" stroke-width="2.5"></circle>
+              <text fill="#FFF" font-size="16" font-weight="900" text-anchor="middle" x="600" y="58">Phase 2 종병승격</text>
+              <text fill="#FFE4E6" font-size="11" font-weight="700" text-anchor="middle" x="600" y="76">8-3. 현위치 브랜드 독점</text>
+            </g>
+
+            <!-- 8-4. Org Culture -->
+            <g class="tree-node">
+              <circle cx="860" cy="115" fill="rgba(236, 72, 153, 0.4)" filter="url(#softGlow)" r="42" stroke="#F472B6" stroke-width="1.5"></circle>
+              <text fill="#FFF" font-size="14" font-weight="800" text-anchor="middle" x="860" y="110">원팀 220명</text>
+              <text fill="#FBCFE8" font-size="10.5" font-weight="700" text-anchor="middle" x="860" y="126">8-4. 100일 실행 몰입</text>
+            </g>
+
+            <!-- 8-5. Social Value / 200Bed Leap -->
+            <g class="tree-node">
+              <circle cx="1060" cy="165" fill="rgba(139, 92, 246, 0.6)" filter="url(#rubyLaserGlow)" r="46" stroke="#C084FC" stroke-width="2"></circle>
+              <text fill="#FFF" font-size="14" font-weight="900" text-anchor="middle" x="1060" y="158">Phase 3 200병상</text>
+              <text fill="#E9D5FF" font-size="10.5" font-weight="800" text-anchor="middle" x="1060" y="175">8-5. 토지매입 대약진</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- 5 ELEGANT FRUITS CARDS -->
+      <div class="fruits-grid-5">
+        <div class="fruit-card">
+          <h4>8-1. 수지 흑자 (연 90억)</h4>
+          <p>월 매출 35억~40억 정착으로 연간 영업이익 78억~90억 원 적립.</p>
+        </div>
+        <div class="fruit-card">
+          <h4>8-2. 수술 1위 임상 탁월성</h4>
+          <p>척추관절 6인, 소화기 5인 명의 유치로 아산/경희대급 수술 독점.</p>
+        </div>
+        <div class="fruit-card" style="background:#FFF1F2; border-color:#FECDD3;">
+          <h4 style="color:#E11D48;">8-3. 현위치 종병 승격</h4>
+          <p>Phase 1 흑자 재원으로 현 위치 105병상 법정 종합병원 승격 완결.</p>
+        </div>
+        <div class="fruit-card">
+          <h4>8-4. 220명 원팀 몰입</h4>
+          <p>직원 220명 인프라 수율 극대화 및 100일 패스트트랙 실행 문화.</p>
+        </div>
+        <div class="fruit-card" style="background:#F3E8FF; border-color:#E9D5FF;">
+          <h4 style="color:#7C3AED;">8-5. 200병상 토지 대약진</h4>
+          <p>축적 흑자 자본금으로 인근 토지 매입 ➔ 200병상 메가 종병 대약진!</p>
         </div>
       </div>
     </div>
@@ -515,7 +644,7 @@
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <i data-lucide="network"></i> 2. 박개성 나무 구조 & 퀀텀 도약 온톨로지 지식 그래프 (Vis.js Canvas)
+          <i data-lucide="network"></i> 2. 유기적 병원 나무 구조 온톨로지 지식 그래프 (Vis.js Canvas)
         </div>
         <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
           Vis.js Interactive Canvas
@@ -579,31 +708,35 @@
   </div>
 
   <footer>
-    McKinsey & Company Strategy Practice | Namyangju Paik Hospital Park Gaeseong Hospital Tree Release 11.0 2026<br>
+    McKinsey & Company Strategy Practice | Namyangju Paik Hospital Organic Tree Release 12.0 2026<br>
     Copyright © McKinsey & Company. All Rights Reserved.
   </footer>
 
   <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (PARK GAESEONG HOSPITAL TREE INTEGRATED)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (ORGANIC TREE MODEL 100% INTEGRATED)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
-        { id: 'paik_master_root', label: '남양주 백병원 (박개성 병원나무구조 완결)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'soil_root', label: '토양·뿌리: 미션(당일수술필수의료) & 개인병원지배구조(C_Gov)', color: { background: '#D4AF37', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
-        { id: 'trunk_4m', label: '줄기: 4M 명의 농축 (척추관절6인/소화기5인/치매3인)', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
-        { id: 'branches_12themes', label: '가지: 12대 실행 테마 (수술실4개 20배구매레버리지)', color: { background: '#8B5CF6', border: '#FFF' }, size: 22, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
-        { id: 'fruits_200bed', label: '열매: Phase1(월40억) ➔ Phase2(종병승격) ➔ Phase3(200병상도약)', color: { background: '#10B981', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
+        { id: 'paik_master_root', label: '남양주 백병원 (Organic Tree Model 완결)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'mission_root', label: '1. 뿌리: 사명 (당일검사-당일수술 필수의료)', color: { background: '#F43F5E', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
+        { id: 'gov_soil', label: '2. 토양: 개인병원 지배구조 100% 보존', color: { background: '#F59E0B', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
+        { id: 'storm_threat', label: '3. 태풍: 비급여통제 · 인력난 · 과세 절벽', color: { background: '#EF4444', border: '#FFF' }, size: 22, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
+        { id: 'trunk_muscle', label: '4. 줄기: 4M 명의 농축 (척추관절6인/소화기5인/신경과3인)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'branches_12', label: '7. 가지: 12대 실행 테마 (수술실4개 20배구매레버리지)', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 14, color: '#FFF', face: 'Pretendard' } },
+        { id: 'fruit_quantum', label: '8. 5대 결실: Phase1(월40억) ➔ Phase2(종병승격) ➔ Phase3(200병상도약)', color: { background: '#8B5CF6', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } }
       ]);
 
       const edges = new vis.DataSet([
-        { from: 'paik_master_root', to: 'soil_root', label: 'anchors_soil_root', arrows: 'to' },
-        { from: 'soil_root', to: 'trunk_4m', label: 'grows_trunk_4m', arrows: 'to' },
-        { from: 'trunk_4m', to: 'branches_12themes', label: 'branches_12themes', arrows: 'to' },
-        { from: 'branches_12themes', to: 'fruits_200bed', label: 'yields_quantum_leap', arrows: 'to' }
+        { from: 'paik_master_root', to: 'mission_root', label: 'anchors_mission', arrows: 'to' },
+        { from: 'mission_root', to: 'gov_soil', label: 'supports_governance', arrows: 'to' },
+        { from: 'gov_soil', to: 'storm_threat', label: 'resists_storm', arrows: 'to' },
+        { from: 'storm_threat', to: 'trunk_muscle', label: 'grows_4m_trunk', arrows: 'to' },
+        { from: 'trunk_muscle', to: 'branches_12', label: 'branches_12themes', arrows: 'to' },
+        { from: 'branches_12', to: 'fruit_quantum', label: 'yields_200bed_leap', arrows: 'to' }
       ]);
 
       const data = { nodes: nodes, edges: edges };
