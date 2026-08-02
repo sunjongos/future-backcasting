@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCKINSEY & COMPANY | 남양주 백병원 박개성 컨설팅 탑재 3단계 스케일업 최종 마스터 보고서 5.0</title>
+  <title>MCKINSEY & COMPANY | 남양주 백병원 4대 경영 헌법상수(미션/비전/거버넌스/미래) 탑재 최종 마스터 보고서 6.0</title>
   
   <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,6 +120,34 @@
       line-height: 1.6;
       max-width: 980px;
     }
+
+    /* 4 Foundational Constants Grid */
+    .const-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .const-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 1.6rem;
+      border-top: 5px solid var(--mck-accent-gold);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+    .const-card.mission { border-top-color: #00A3E0; }
+    .const-card.vision { border-top-color: #10B981; }
+    .const-card.governance { border-top-color: #D4AF37; }
+    .const-card.future { border-top-color: #8B5CF6; }
+
+    .const-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      margin-bottom: 0.6rem;
+    }
+    .const-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.6; }
 
     /* Concept Guide Box (쉬운 개념 설명) */
     .concept-guide-box {
@@ -310,11 +338,11 @@
   <div class="mck-top-bar">
     <div class="mck-logo-group">
       <div class="mck-brand-title">McKinsey & Company</div>
-      <div class="mck-sub-title">| Park Gaeseong Hospital Consulting Skill Release 5.0</div>
+      <div class="mck-sub-title">| Foundational Constitution & Master Practice Release 6.0</div>
     </div>
     <div class="report-meta">
       CONFIDENTIAL & PROPRIETARY<br>
-      Doc ID: MCK-NYJ-PARK-SKILL-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-ULTIMATE-CONST-2026 | Date: 2026. 08. 02
     </div>
   </div>
 
@@ -322,12 +350,39 @@
     
     <!-- Cover Card -->
     <div class="executive-header-card">
-      <span class="executive-tag">Park Gaeseong Hospital Consulting Asset 34 Chapters Integrated</span>
-      <h1 class="executive-title">남양주 백병원 박개성 병원경영 34개 챕터 온톨로지<br>3단계 스케일업 & 200병상 종합병원 미래역산 마스터 보고서</h1>
+      <span class="executive-tag">Foundational Constitution Edition Release 6.0</span>
+      <h1 class="executive-title">남양주 백병원 4대 경영 헌법상수(미션/비전/거버넌스/미래)<br>3단계 스케일업 & 200병상 종합병원 미래역산 최종 마스터 보고서</h1>
       <p class="executive-subtitle">
-        엘리오앤컴퍼니 박개성 대표 저서 34개 챕터 전수 자산과 R1~R4 경영 공리를 결합!<br>
-        <strong>800병상 부산침례병원 파산 교훈(R2)을 바탕으로 24시간 응급 헛구호를 0으로 선제 차단</strong>하고, <strong>명의 4M 농축으로 [Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현위치 종병 승격] ➔ [Phase 3: 토지 매입 200병상 메가 종병 도약]</strong>을 완결한 최고의 처방전입니다.
+        <strong>미션, 비전, 거버넌스, 미래를 헌법적 목표상수로 선제 정의!</strong><br>
+        800병상 부산침례병원 파산 교훈(R2)을 바탕으로 24시간 응급 헛구호를 0으로 차단하고, 개인병원 지배구조 100% 보존 상에서 <strong>[Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현위치 종병 승격] ➔ [Phase 3: 토지 매입 200병상 메가 종병 도약]</strong>을 완결한 최고 권위 마스터 처방전입니다.
       </p>
+    </div>
+
+    <!-- 4 FOUNDATIONAL CONSTANTS GRID (4대 경영 헌법 상수) -->
+    <div class="const-grid-4">
+      <div class="const-card mission">
+        <h4>1. 미션 상수 (\(C_{\text{Mission}}\))</h4>
+        <p>남양주 80만 주민에게 가장 정직하고 뛰어난 <strong>당일 검사-당일 수술 쾌속 필수의료</strong>를 제공하여 주민의 생명과 건강을 사수한다.</p>
+      </div>
+
+      <div class="const-card vision">
+        <h4>2. 비전 상수 (\(C_{\text{Vision}}\))</h4>
+        <p>경기 동북부 1위 독점 <strong>척추관절·소화기·치매 엑설런트 병원</strong>에서 200병상 메가 종합병원으로의 지속가능 대약진 완결.</p>
+      </div>
+
+      <div class="const-card governance">
+        <h4>3. 거버넌스 상수 (\(C_{\text{Gov}}\))</h4>
+        <p><strong>개인병원 지배구조 100% 완벽 보존 & 실속 흑자 경영</strong> (무리한 법인 전환이나 24시간 당직 적자 헛구호 0 차단).</p>
+      </div>
+
+      <div class="const-card future">
+        <h4>4. 미래 목표상수 (\(C_{\text{Future}}\))</h4>
+        <p>
+          • <strong>Phase 1</strong>: 월 35억~40억 흑자 정착<br>
+          • <strong>Phase 2</strong>: 현위치 105병상 종병 승격<br>
+          • <strong>Phase 3</strong>: 토지 매입 200병상 종병 도약
+        </p>
+      </div>
     </div>
 
     <!-- CONCEPT GUIDE BOX (누구나 쉬운 미래역산법 입문 가이드) -->
@@ -359,7 +414,7 @@
       </div>
     </div>
 
-    <!-- PARK GAESEONG 4 AXIOMS SECTION (박개성 4대 경영 공리) -->
+    <!-- PARK GAESEONG 4 AXIOMS SECTION (박개성 4대 경영공리) -->
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
@@ -482,7 +537,7 @@
     <div class="section-card">
       <div class="section-header">
         <div class="section-title">
-          <i data-lucide="network"></i> 2. 3단계 스케일업 & 토지 매입 온톨로지 지식 그래프 (Vis.js Canvas)
+          <i data-lucide="network"></i> 2. 4대 헌법 상수 & 3단계 스케일업 온톨로지 지식 그래프 (Vis.js Canvas)
         </div>
         <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
           Vis.js Interactive Canvas
@@ -546,21 +601,23 @@
   </div>
 
   <footer>
-    McKinsey & Company Strategy Practice | Namyangju Paik Hospital Park Gaeseong Skill 5.0 Edition 2026<br>
+    McKinsey & Company Strategy Practice | Namyangju Paik Hospital Foundational Constitution Edition 6.0 2026<br>
     Copyright © McKinsey & Company. All Rights Reserved.
   </footer>
 
   <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (PARK GAESEONG CONSULTING INTEGRATED)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (4 FOUNDATIONAL CONSTANTS INTEGRATED)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
-        { id: 'paik_master_root', label: '남양주 백병원 (105병상/수술실4개/의사20/직원220)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'park_axioms', label: '박개성 R1~R4 공리 (R2 부산침례병원 파산경고)', color: { background: '#8B5CF6', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'paik_master_root', label: '남양주 백병원 (4대 헌법상수/개인병원유지)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'mission_const', label: 'C_Mission: 당일 검사-당일 수술 쾌속 필수의료', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
+        { id: 'vision_const', label: 'C_Vision: 3대센터 독점 ➔ 200병상 메가 종병', color: { background: '#10B981', border: '#FFF' }, size: 22, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
+        { id: 'gov_const', label: 'C_Governance: 개인병원 100% 보존 & 실속 흑자', color: { background: '#D4AF37', border: '#FFF' }, size: 22, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
         { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (명의 확충 퀀텀점프)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'phase2_target', label: 'Phase 2: 현 부지 105병상 종병 승격', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'phase3_target', label: 'Phase 3: 토지 매입 ➔ 200병상 메가 종병 도약', color: { background: '#8B5CF6', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
@@ -568,9 +625,11 @@
       ]);
 
       const edges = new vis.DataSet([
-        { from: 'paik_master_root', to: 'park_axioms', label: 'applies_park_axioms', arrows: 'to' },
-        { from: 'park_axioms', to: 'cut_300b_trap', label: 'warns_r2_bankruptcy', arrows: 'to' },
+        { from: 'paik_master_root', to: 'mission_const', label: 'anchors_mission', arrows: 'to' },
+        { from: 'paik_master_root', to: 'vision_const', label: 'anchors_vision', arrows: 'to' },
+        { from: 'paik_master_root', to: 'gov_const', label: 'anchors_governance', arrows: 'to' },
         { from: 'paik_master_root', to: 'phase1_target', label: '100day_action', arrows: 'to' },
+        { from: 'paik_master_root', to: 'cut_300b_trap', label: 'eliminates_deficit_trap', arrows: 'to' },
         { from: 'phase1_target', to: 'phase2_target', label: 'funds_local_general_hosp', arrows: 'to' },
         { from: 'phase2_target', to: 'phase3_target', label: 'buys_land_for_200bed', arrows: 'to' }
       ]);
