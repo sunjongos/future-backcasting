@@ -1,0 +1,3 @@
+# Core Python standard library only required for CLI and SQLite engine.
+# Optional visual dependencies:
+sqlite3
