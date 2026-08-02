@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCKINSEY & COMPANY | FORWARD FROM THE FUTURE 경영 위기 처방 보고서</title>
+  
+  <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <style>
+    :root {
+      /* McKinsey Signature Luxury Color Palette */
+      --mck-navy: #051C2C;
+      --mck-deep-blue: #002B49;
+      --mck-accent-cyan: #00A3E0;
+      --mck-accent-gold: #D4AF37;
+      --mck-bg-gray: #F4F6F9;
+      --mck-card-bg: #FFFFFF;
+      --text-main: #111827;
+      --text-sub: #4B5563;
+      --border-light: #E5E7EB;
+
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-main: 'Pretendard', -apple-system, sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-code: 'Fira Code', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--mck-bg-gray);
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* McKinsey Top Brand Bar */
+    .mck-top-bar {
+      background-color: var(--mck-navy);
+      color: #FFFFFF;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid var(--mck-accent-gold);
+    }
+    .mck-logo-group { display: flex; align-items: center; gap: 1rem; }
+    .mck-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+    }
+    .mck-sub-title {
+      font-size: 0.78rem;
+      color: var(--mck-accent-cyan);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .report-meta {
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.75);
+      text-align: right;
+    }
+
+    /* Main McKinsey Report Container */
+    .report-container {
+      max-width: 1280px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Executive Cover Header Card */
+    .executive-header-card {
+      background: linear-gradient(135deg, var(--mck-deep-blue) 0%, var(--mck-navy) 100%);
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 3rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 20px 40px rgba(5, 28, 44, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .executive-header-card::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0, 163, 224, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .executive-tag {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--mck-accent-gold);
+      color: #FDE68A;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .executive-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      color: #FFFFFF;
+    }
+    .executive-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 950px;
+    }
+
+    /* McKinsey SCQA 4 Grid Sections */
+    .scqa-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .scqa-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--mck-navy);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .scqa-card.accent { border-top-color: var(--mck-accent-gold); background: #FFFDF5; }
+    .scqa-step { font-family: var(--font-code); font-size: 0.75rem; font-weight: 800; color: var(--mck-accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .scqa-card h4 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.6rem; }
+    .scqa-card p { font-size: 0.88rem; color: var(--text-sub); line-height: 1.55; }
+
+    /* Section Card Wrappers */
+    .section-card {
+      background: var(--mck-card-bg);
+      border-radius: 16px;
+      padding: 2.2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border-light);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--mck-bg-gray);
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-title i { color: var(--mck-accent-cyan); }
+
+    /* ONTOLOGY GRAPH CANVAS BOX (MUST HAVE) */
+    .ontology-graph-container {
+      width: 100%;
+      height: 520px;
+      background: radial-gradient(circle at 50% 50%, #0B1120 0%, #030712 100%);
+      border-radius: 14px;
+      border: 2px solid var(--mck-navy);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+    #vis-mckinsey-ontology { width: 100%; height: 100%; }
+
+    /* DSQ Optimization Math Display Box */
+    .dsq-math-box {
+      background: var(--mck-navy);
+      color: #FFFFFF;
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border-left: 5px solid var(--mck-accent-gold);
+    }
+
+    /* 2 Columns Layout for Detailed Analysis */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    
+    .analysis-box {
+      background: var(--mck-bg-gray);
+      border-radius: 12px;
+      padding: 1.4rem;
+      border: 1px solid var(--border-light);
+    }
+    .analysis-box h5 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--mck-navy);
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    /* Table Styling */
+    table.mck-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table.mck-table th {
+      background: var(--mck-navy);
+      color: #FFFFFF;
+      padding: 1rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: left;
+    }
+    table.mck-table td {
+      padding: 0.95rem 1.2rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-main);
+    }
+    table.mck-table tr:nth-child(even) { background: #F9FAFB; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border-light);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top McKinsey Brand Bar -->
+  <div class="mck-top-bar">
+    <div class="mck-logo-group">
+      <div class="mck-brand-title">McKinsey & Company</div>
+      <div class="mck-sub-title">| Strategy & AGI Healthcare Practice</div>
+    </div>
+    <div class="report-meta">
+      CONFIDENTIAL & PROPRIETARY<br>
+      Doc ID: MCK-AGI-FB-2026-V5 | Date: 2026. 08. 02
+    </div>
+  </div>
+
+  <div class="report-container">
+    
+    <!-- Executive Cover Header Card -->
+    <div class="executive-header-card">
+      <span class="executive-tag">Executive Consulting Report 2026</span>
+      <h1 class="executive-title">미래역산법 (FORWARD FROM THE FUTURE) 기반<br>경영 위기 본질 분석 및 AGI 처방 보고서</h1>
+      <p class="executive-subtitle">
+        본 보고서는 병원 경영 수지 적자(+35억 마이너스) 및 12개 사업 테마 병렬 추진으로 인한 조직 마비를 해갈하기 위해,<br>
+        <strong>미래 목표상수($C_{\text{Goal}}$) 확정 ➔ 현재 0/1 선택 및 DSQ 최적화 ($D \times S \times Q$) ➔ 과거 인과 피드백 학습</strong> 구조를 온톨로지 지식 그래프로 성립시킨 맥킨지 전략 처방전입니다.
+      </p>
+    </div>
+
+    <!-- SCQA Framework 4 Grid Cards -->
+    <div class="scqa-grid">
+      <div class="scqa-card">
+        <div class="scqa-step">Situation (상황)</div>
+        <h4>경영 위기 현상</h4>
+        <p>중소/대학병원이 경영 수지 적자(-35억) 직면 및 12가지 과제 병렬 추진으로 조직 전체 역량 마비</p>
+      </div>
+
+      <div class="scqa-card">
+        <div class="scqa-step">Complication (전개)</div>
+        <h4>순방향 예측의 한계</h4>
+        <p>과거 data/현재 역량에서 미래를 예측할 때 경우의 수가 $2^n$ 기하급수 폭발 ➔ <strong>분석 마비 (Analysis Paralysis)</strong> 발생</p>
+      </div>
+
+      <div class="scqa-card">
+        <div class="scqa-step">Question (질문)</div>
+        <h4>핵심 해결 질문</h4>
+        <p>어떻게 불확실성을 선제 차단하고 100일 만에 +35억 수지개선 정량 목표상수를 확실하게 달성할 것인가?</p>
+      </div>
+
+      <div class="scqa-card accent">
+        <div class="scqa-step">Answer (해답)</div>
+        <h4>미래역산법 솔루션</h4>
+        <p>미래 상수를 우선 꽂고 현재 0/1 이진 선택과 DSQ 성과 최적화로 문제를 해결한 후 과거 인과 학습 완성!</p>
+      </div>
+    </div>
+
+    <!-- SECTION 1: ESSENCE OF PROBLEM & METHODOLOGY -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="target"></i> 1. 경영 위기의 본질 분석 및 미래역산법 메커니즘
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="analysis-box">
+          <h5><i data-lucide="alert-triangle" style="color:#EF4444;"></i> 순방향 예측의 구조적 맹점 (Analysis Paralysis)</h5>
+          <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.6;">
+            현재 자원과 예산 한계에 갇혀 미래를 순방향 점치는 방식은 무한 경우의 수를 파생시킵니다.<br>
+            이는 양자 연산급 부하를 야기하여 조직이 분석만 하다가 기회가 소멸하는 <strong>분석 마비 (Analysis Paralysis)</strong>를 유발합니다.
+          </p>
+        </div>
+
+        <div class="analysis-box" style="background:#F0FDF4; border-color:#86EFAC;">
+          <h5><i data-lucide="zap" style="color:#10B981;"></i> 미래역산법의 단순화 정복 메커니즘</h5>
+          <p style="font-size:0.88rem; color:var(--text-sub); line-height:1.6;">
+            미래의 정량 목표 상수($C_{\text{Goal}}$)를 먼저 고정하면 불확실성이 차단됩니다.<br>
+            미래에서 현재로 역산(Step 1)하여 사명 부합 <strong>1(선택)</strong>과 비본질 <strong>0(배제)</strong>만 계산기 수준으로 연산해 쾌속 집행합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: REQUIRED ONTOLOGY GRAPH CANVAS (MUST HAVE) -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="network"></i> 2. 미래역산법 핵심 온톨로지 지식 그래프 (Ontology Knowledge Graph)
+        </div>
+        <span style="font-size:0.8rem; font-weight:800; color:var(--mck-accent-cyan); background:rgba(0,163,224,0.1); padding:0.3rem 0.8rem; border-radius:6px;">
+          Vis.js Interactive Graph Engine Attached
+        </span>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--text-sub); margin-bottom:1rem;">
+        ※ 아래 그래프는 미래역산법 7단계(顧飛結前資逆行), DSQ 최적화, 5대 전환 로직, SMART 5대 목표상수, 3축 시간 메커니즘 간의 <strong>전수 RDF 심볼릭 릴레이션 노드</strong>입니다. (마우스 드래그 및 노드 클릭 시 탐색 가능)
+      </p>
+
+      <!-- VIS.JS ONTOLOGY GRAPH CANVAS -->
+      <div class="ontology-graph-container">
+        <div id="vis-mckinsey-ontology"></div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: DSQ MATHEMATICAL OPTIMIZATION MODEL -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="calculator"></i> 3. DSQ 성과 최적화 수리 방정적 분석
+        </div>
+      </div>
+
+      <div class="dsq-math-box">
+        <div style="font-family:var(--font-heading); font-size:1.4rem; font-weight:900; color:#FDE68A;">
+          \[ \text{Performance (FORWARD)} = D_{\text{Direction (1/0 선택)}} \times S_{\text{Speed (4M 자원농축)}} \times Q_{\text{Quality (사전질문 수술)}} \]
+        </div>
+        <p style="font-size:0.85rem; color:rgba(255,255,255,0.8); margin-top:0.5rem;">
+          수지 개선 산출액 공식: \(\Delta \pi = D \times S \times Q \times \pi_{\text{Base}}\) (\(\pi_{\text{Base}} = 48\) 억원 기준)
+        </p>
+      </div>
+
+      <table class="mck-table">
+        <thead>
+          <tr>
+            <th>최적화 축 (Axis)</th>
+            <th>온톨로지 핵심 역할</th>
+            <th>이진 선택 메커니즘 (0/1 Choice)</th>
+            <th>경영 수지 기여 효과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:800; color:var(--mck-navy);">D - Direction (방향)</td>
+            <td>성과 방정식 핵심 연산자</td>
+            <td><strong>1 (Focus)</strong>: 본질 과제 자원 100% 농축 / <strong>0 (Eliminate)</strong>: 비본질 배제</td>
+            <td>목표 지향성 95% 달성</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800; color:var(--mck-navy);">S - Speed (속도)</td>
+            <td>성과 실행 가속도</td>
+            <td><strong>Assemble 4M</strong>: 내 예산 한계를 넘어 외부/고수 자원 총동원</td>
+            <td>집행 기간 3년 ➔ 100일 단축</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800; color:var(--mck-navy);">Q - Quality (완성도)</td>
+            <td>리스크 사전 차단 디테일</td>
+            <td><strong>Reverse Test</strong>: "실패원인은?" 사전 질의로 맹점 선제 수술</td>
+            <td>실행 저항 0% 완전 제거</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 4: 7-STEP ACTION ROADMAP -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="layers"></i> 4. FORWARD 7단계 (顧飛結前資逆行) 경영 처방 로드맵
+        </div>
+      </div>
+
+      <table class="mck-table">
+        <thead>
+          <tr>
+            <th>단계</th>
+            <th>한자</th>
+            <th>FORWARD</th>
+            <th>7단계 핵심 액션 (McKinsey Prescriptions)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:800;">1단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">顧 (고)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">F - Find</td>
+            <td>표면적 환자 요구 너머의 미충족 니즈(Unmet Needs) 파악하여 진짜 문제 발견</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">2단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">飛 (비)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">O - Objective</td>
+            <td>피터 드러커 5대 SMART 정량 목표상수($C_{\text{Goal}}$ = +35억 수지개선) 확정 후 역산</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">3단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">結 (결)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">R - Realize</td>
+            <td>기획 초기 최종 산출물 형태와 KPI 잠정 결론 선제 정립으로 불필요 분석 소거</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">4단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">前 (전)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">W - Work Highest</td>
+            <td>에베레스트 베이스캠프 원리 - 이미 검증된 최고 성공사례 및 타 산업 벤치마킹</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">5단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">資 (자)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">A - Assemble 4M</td>
+            <td>내 예산 한계를 넘어선 외부/고수 지혜 4M 자원 선제 농축 배분</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">6단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">逆 (역)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">R - Reverse Test</td>
+            <td>"이 기획이 실패한다면 가장 큰 이유는?" 사전 질문으로 반대자 시각 흡수 및 맹점 수술</td>
+          </tr>
+          <tr>
+            <td style="font-weight:800;">7단계</td>
+            <td style="font-weight:800; color:var(--mck-accent-cyan);">行 (행)</td>
+            <td style="font-family:var(--font-code); font-weight:800;">D - Deploy 100-Day</td>
+            <td>사전 저항 예방책 마련 및 첫 3개월 100일 마일스톤 정밀 순차 집행</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    McKinsey & Company Strategy Practice | FORWARD FROM THE FUTURE Master Report 2026<br>
+    Copyright © McKinsey & Company. All Rights Reserved.
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // VIS.JS MCKINSEY ONTOLOGY GRAPH ENGINE
+    window.addEventListener('load', function() {
+      const container = document.getElementById('vis-mckinsey-ontology');
+      if (!container) return;
+
+      const nodes = new vis.DataSet([
+        { id: 'core_backcast', label: '미래역산법 (FORWARD)', color: { background: '#D4AF37', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'c_goal', label: '목표상수(C_Goal)', color: { background: '#00A3E0', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'smart', label: 'Drucker SMART 5원칙', color: { background: '#38BDF8', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } },
+        { id: 'binary_choice', label: '0/1 이진 선택 (Binary Choice)', color: { background: '#10B981', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'dsq_model', label: 'DSQ 성과 최적화 (D x S x Q)', color: { background: '#F59E0B', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
+        { id: 'past_learning', label: '과거 피드백 학습 (Feedback)', color: { background: '#8B5CF6', border: '#FFF' }, size: 20, font: { size: 13, color: '#FFF', face: 'Pretendard' } },
+        { id: 'analysis_paralysis', label: '⚠️ 순방향 예측 [분석 마비]', color: { background: '#EF4444', border: '#FFF' }, size: 22, font: { size: 14, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } }
+      ]);
+
+      const edges = new vis.DataSet([
+        { from: 'core_backcast', to: 'c_goal', label: 'defines_target', arrows: 'to' },
+        { from: 'c_goal', to: 'smart', label: 'structured_by', arrows: 'to' },
+        { from: 'core_backcast', to: 'binary_choice', label: 'solves_present_via', arrows: 'to' },
+        { from: 'core_backcast', to: 'dsq_model', label: 'optimizes_via', arrows: 'to' },
+        { from: 'binary_choice', to: 'past_learning', label: 'traces_past_data', arrows: 'to' },
+        { from: 'core_backcast', to: 'analysis_paralysis', label: 'eliminates_risk_of', arrows: 'to' }
+      ]);
+
+      const data = { nodes: nodes, edges: edges };
+
+      const options = {
+        nodes: { shape: 'dot', borderWidth: 2, shadow: { enabled: true, color: 'rgba(212, 175, 55, 0.4)', size: 10 } },
+        edges: {
+          width: 2,
+          color: { color: 'rgba(0, 163, 224, 0.6)', highlight: '#D4AF37' },
+          arrows: { to: { enabled: true, scaleFactor: 0.7 } },
+          font: { size: 11, color: '#FDE68A', face: 'Fira Code', strokeWidth: 3, strokeColor: '#051C2C' },
+          smooth: { type: 'continuous' }
+        },
+        physics: {
+          solver: 'forceAtlas2Based',
+          forceAtlas2Based: { gravitationalConstant: -100, centralGravity: 0.01, springLength: 180 },
+          maxVelocity: 25, stabilization: { iterations: 150 }
+        },
+        interaction: { hover: true, dragNodes: true, zoomView: true, dragView: true }
+      };
+
+      new vis.Network(container, data, options);
+    });
+  </script>
+</body>
+</html>
