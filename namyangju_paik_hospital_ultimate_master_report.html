@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MCKINSEY & COMPANY | 남양주 백병원 3단계 스케일업(105병상 ➔ 현위치 종병 ➔ 토지매입 200병상 종병) 미래역산 마스터 보고서</title>
+  <title>MCKINSEY & COMPANY | 남양주 백병원 박개성 컨설팅 탑재 3단계 스케일업 최종 마스터 보고서 5.0</title>
   
   <!-- Google Fonts, Lucide Icons, Vis.js & MathJax -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,6 +157,24 @@
     .axis-card h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.4rem; }
     .axis-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.55; }
 
+    /* Park Gaeseong Axiom Box (박개성 4대 경영공리) */
+    .axiom-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .axiom-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 4px solid #8B5CF6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    .axiom-card.danger { border-top-color: #EF4444; background: #FEF2F2; }
+    .axiom-card h4 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 800; color: var(--mck-navy); margin-bottom: 0.4rem; }
+    .axiom-card p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.5; }
+
     /* Summary Banner */
     .summary-callout-banner {
       background: linear-gradient(135deg, #FFFDF5, #F4F6F9);
@@ -292,11 +310,11 @@
   <div class="mck-top-bar">
     <div class="mck-logo-group">
       <div class="mck-brand-title">McKinsey & Company</div>
-      <div class="mck-sub-title">| 3-Phase Scale-Up & Land Acquisition Master Practice</div>
+      <div class="mck-sub-title">| Park Gaeseong Hospital Consulting Skill Release 5.0</div>
     </div>
     <div class="report-meta">
       CONFIDENTIAL & PROPRIETARY<br>
-      Doc ID: MCK-NYJ-ULTIMATE-3PHASE-2026 | Date: 2026. 08. 02
+      Doc ID: MCK-NYJ-PARK-SKILL-2026 | Date: 2026. 08. 02
     </div>
   </div>
 
@@ -304,11 +322,11 @@
     
     <!-- Cover Card -->
     <div class="executive-header-card">
-      <span class="executive-tag">3-Phase Scale-Up & Land Expansion Master Edition</span>
-      <h1 class="executive-title">남양주 백병원 3단계 스케일업 로드맵<br>(105병상 ➔ 현위치 종병 승격 ➔ 토지 매입 200병상 메가 종병 도약)</h1>
+      <span class="executive-tag">Park Gaeseong Hospital Consulting Asset 34 Chapters Integrated</span>
+      <h1 class="executive-title">남양주 백병원 박개성 병원경영 34개 챕터 온톨로지<br>3단계 스케일업 & 200병상 종합병원 미래역산 마스터 보고서</h1>
       <p class="executive-subtitle">
-        현재 105병상/수술실 4개/의사 20명/직원 220명/월 매출 30억 원(영업이익률 10%) 베이스라인에서 출발하여,<br>
-        <strong>[Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현 부지 105병상 종합병원 승격] ➔ [Phase 3: 인근 토지 매입 200병상 메가 종합병원 2차 도약]</strong>을 완결한 최고의 맥킨지 마스터 처방전입니다.
+        엘리오앤컴퍼니 박개성 대표 저서 34개 챕터 전수 자산과 R1~R4 경영 공리를 결합!<br>
+        <strong>800병상 부산침례병원 파산 교훈(R2)을 바탕으로 24시간 응급 헛구호를 0으로 선제 차단</strong>하고, <strong>명의 4M 농축으로 [Phase 1: 월 35억~40억 흑자 정착] ➔ [Phase 2: 현위치 종병 승격] ➔ [Phase 3: 토지 매입 200병상 메가 종병 도약]</strong>을 완결한 최고의 처방전입니다.
       </p>
     </div>
 
@@ -337,6 +355,37 @@
         <div class="axis-card" style="border-left-color:#00A3E0;">
           <h4>3축: 과거 피드백 학습</h4>
           <p>개원 만 4년 동안 환자가 빠져나간 과거 원인을 역추적하여 <strong>당일 수술 패스트트랙 & 부지 매입 200병상</strong>으로 해결합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARK GAESEONG 4 AXIOMS SECTION (박개성 4대 경영 공리) -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <i data-lucide="shield-alert"></i> 박개성 대표 병원 경영 4대 공리 (R1~R4) & 파산 사례 교훈
+        </div>
+      </div>
+
+      <div class="axiom-grid-4">
+        <div class="axiom-card">
+          <h4>R1: 선행 타격 법칙</h4>
+          <p>적자가 발생하기 전 핵심 3대 센터 명의(척추관절 6인, 소화기 4인+외과, 신경과 3인)를 선제 유치하여 시장 1위 독점.</p>
+        </div>
+
+        <div class="axiom-card danger">
+          <h4>R2: 부산침례병원 파산 경고</h4>
+          <p><strong>800병상이었던 부산침례병원도 무리한 24시간 응급/심혈관 당직 적자 팽창으로 파산함.</strong> 백병원 24시간 헛구호 0 차단 명분!</p>
+        </div>
+
+        <div class="axiom-card">
+          <h4>R3: 20배 구매 레버리지</h4>
+          <p>수술실 4개 & 검진센터 소모품·재료비 20배 공동 구매 레버리지로 원가 30% 절감.</p>
+        </div>
+
+        <div class="axiom-card">
+          <h4>R4: 4M 근육 곱셈 법칙</h4>
+          <p>\(4\text{M} = \text{Manpower(명의)} \times \text{Management(100일)} \times \text{Material(수술장)} \times \text{Marketing(1위)}\)</p>
         </div>
       </div>
     </div>
@@ -497,29 +546,31 @@
   </div>
 
   <footer>
-    McKinsey & Company Strategy Practice | Namyangju Paik Hospital 3-Phase Land Expansion Edition 2026<br>
+    McKinsey & Company Strategy Practice | Namyangju Paik Hospital Park Gaeseong Skill 5.0 Edition 2026<br>
     Copyright © McKinsey & Company. All Rights Reserved.
   </footer>
 
   <script>
     lucide.createIcons();
 
-    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (3-PHASE SCALE-UP)
+    // VIS.JS ONTOLOGY CANVAS FOR ULTIMATE MASTER REPORT (PARK GAESEONG CONSULTING INTEGRATED)
     window.addEventListener('load', function() {
       const container = document.getElementById('vis-ultimate-ontology');
       if (!container) return;
 
       const nodes = new vis.DataSet([
         { id: 'paik_master_root', label: '남양주 백병원 (105병상/수술실4개/의사20/직원220)', color: { background: '#D4AF37', border: '#FFF' }, size: 30, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
-        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (명의 확충 퀀텀점프)', color: { background: '#10B981', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'park_axioms', label: '박개성 R1~R4 공리 (R2 부산침례병원 파산경고)', color: { background: '#8B5CF6', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
+        { id: 'phase1_target', label: 'Phase 1: 월 35억~40억 (명의 확충 퀀텀점프)', color: { background: '#10B981', border: '#FFF' }, size: 26, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'phase2_target', label: 'Phase 2: 현 부지 105병상 종병 승격', color: { background: '#00A3E0', border: '#FFF' }, size: 24, font: { size: 15, color: '#FFF', face: 'Pretendard', strokeWidth: 3, strokeColor: '#051C2C' } },
         { id: 'phase3_target', label: 'Phase 3: 토지 매입 ➔ 200병상 메가 종병 도약', color: { background: '#8B5CF6', border: '#FFF' }, size: 28, font: { size: 16, color: '#FFF', face: 'Pretendard', strokeWidth: 4, strokeColor: '#051C2C' } },
         { id: 'cut_300b_trap', label: '0(배제): 300병상 종병 적자유발 24시간 응급 0차단', color: { background: '#EF4444', border: '#FFF' }, size: 18, font: { size: 12, color: '#FFF', face: 'Pretendard' } }
       ]);
 
       const edges = new vis.DataSet([
+        { from: 'paik_master_root', to: 'park_axioms', label: 'applies_park_axioms', arrows: 'to' },
+        { from: 'park_axioms', to: 'cut_300b_trap', label: 'warns_r2_bankruptcy', arrows: 'to' },
         { from: 'paik_master_root', to: 'phase1_target', label: '100day_action', arrows: 'to' },
-        { from: 'paik_master_root', to: 'cut_300b_trap', label: 'eliminates_deficit_trap', arrows: 'to' },
         { from: 'phase1_target', to: 'phase2_target', label: 'funds_local_general_hosp', arrows: 'to' },
         { from: 'phase2_target', to: 'phase3_target', label: 'buys_land_for_200bed', arrows: 'to' }
       ]);
